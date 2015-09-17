@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */; };
+		FD13CDF01BAB2E0F0015D8C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CDEF1BAB2E0F0015D8C3 /* ViewController.swift */; };
+		FD13CDF31BAB2E0F0015D8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */; };
+		FD13CDF51BAB2E0F0015D8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF41BAB2E0F0015D8C3 /* Assets.xcassets */; };
+		FD13CDF81BAB2E0F0015D8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */; };
+		FD13CE031BAB2E0F0015D8C3 /* Dream_DiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE021BAB2E0F0015D8C3 /* Dream_DiaryTests.swift */; };
+		FD13CE0E1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD13CDFF1BAB2E0F0015D8C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD13CDE21BAB2E0F0015D8C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD13CDE91BAB2E0F0015D8C3;
+			remoteInfo = "Dream Diary";
+		};
+		FD13CE0A1BAB2E0F0015D8C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD13CDE21BAB2E0F0015D8C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD13CDE91BAB2E0F0015D8C3;
+			remoteInfo = "Dream Diary";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD13CDEA1BAB2E0F0015D8C3 /* Dream Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dream Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FD13CDEF1BAB2E0F0015D8C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD13CDF21BAB2E0F0015D8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD13CDF41BAB2E0F0015D8C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD13CDF71BAB2E0F0015D8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD13CDF91BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD13CDFE1BAB2E0F0015D8C3 /* Dream DiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dream DiaryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD13CE021BAB2E0F0015D8C3 /* Dream_DiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream_DiaryTests.swift; sourceTree = "<group>"; };
+		FD13CE041BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dream DiaryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream_DiaryUITests.swift; sourceTree = "<group>"; };
+		FD13CE0F1BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD13CDE71BAB2E0F0015D8C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD13CDFB1BAB2E0F0015D8C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD13CE061BAB2E0F0015D8C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD13CDE11BAB2E0F0015D8C3 = {
+			isa = PBXGroup;
+			children = (
+				FD13CDEC1BAB2E0F0015D8C3 /* Dream Diary */,
+				FD13CE011BAB2E0F0015D8C3 /* Dream DiaryTests */,
+				FD13CE0C1BAB2E0F0015D8C3 /* Dream DiaryUITests */,
+				FD13CDEB1BAB2E0F0015D8C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD13CDEB1BAB2E0F0015D8C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD13CDEA1BAB2E0F0015D8C3 /* Dream Diary.app */,
+				FD13CDFE1BAB2E0F0015D8C3 /* Dream DiaryTests.xctest */,
+				FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD13CDEC1BAB2E0F0015D8C3 /* Dream Diary */ = {
+			isa = PBXGroup;
+			children = (
+				FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */,
+				FD13CDEF1BAB2E0F0015D8C3 /* ViewController.swift */,
+				FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */,
+				FD13CDF41BAB2E0F0015D8C3 /* Assets.xcassets */,
+				FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */,
+				FD13CDF91BAB2E0F0015D8C3 /* Info.plist */,
+			);
+			path = "Dream Diary";
+			sourceTree = "<group>";
+		};
+		FD13CE011BAB2E0F0015D8C3 /* Dream DiaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD13CE021BAB2E0F0015D8C3 /* Dream_DiaryTests.swift */,
+				FD13CE041BAB2E0F0015D8C3 /* Info.plist */,
+			);
+			path = "Dream DiaryTests";
+			sourceTree = "<group>";
+		};
+		FD13CE0C1BAB2E0F0015D8C3 /* Dream DiaryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */,
+				FD13CE0F1BAB2E0F0015D8C3 /* Info.plist */,
+			);
+			path = "Dream DiaryUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD13CDE91BAB2E0F0015D8C3 /* Dream Diary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD13CE121BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream Diary" */;
+			buildPhases = (
+				FD13CDE61BAB2E0F0015D8C3 /* Sources */,
+				FD13CDE71BAB2E0F0015D8C3 /* Frameworks */,
+				FD13CDE81BAB2E0F0015D8C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dream Diary";
+			productName = "Dream Diary";
+			productReference = FD13CDEA1BAB2E0F0015D8C3 /* Dream Diary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD13CDFD1BAB2E0F0015D8C3 /* Dream DiaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD13CE151BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryTests" */;
+			buildPhases = (
+				FD13CDFA1BAB2E0F0015D8C3 /* Sources */,
+				FD13CDFB1BAB2E0F0015D8C3 /* Frameworks */,
+				FD13CDFC1BAB2E0F0015D8C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD13CE001BAB2E0F0015D8C3 /* PBXTargetDependency */,
+			);
+			name = "Dream DiaryTests";
+			productName = "Dream DiaryTests";
+			productReference = FD13CDFE1BAB2E0F0015D8C3 /* Dream DiaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FD13CE081BAB2E0F0015D8C3 /* Dream DiaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD13CE181BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryUITests" */;
+			buildPhases = (
+				FD13CE051BAB2E0F0015D8C3 /* Sources */,
+				FD13CE061BAB2E0F0015D8C3 /* Frameworks */,
+				FD13CE071BAB2E0F0015D8C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD13CE0B1BAB2E0F0015D8C3 /* PBXTargetDependency */,
+			);
+			name = "Dream DiaryUITests";
+			productName = "Dream DiaryUITests";
+			productReference = FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD13CDE21BAB2E0F0015D8C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					FD13CDE91BAB2E0F0015D8C3 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					FD13CDFD1BAB2E0F0015D8C3 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = FD13CDE91BAB2E0F0015D8C3;
+					};
+					FD13CE081BAB2E0F0015D8C3 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = FD13CDE91BAB2E0F0015D8C3;
+					};
+				};
+			};
+			buildConfigurationList = FD13CDE51BAB2E0F0015D8C3 /* Build configuration list for PBXProject "Dream Diary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD13CDE11BAB2E0F0015D8C3;
+			productRefGroup = FD13CDEB1BAB2E0F0015D8C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD13CDE91BAB2E0F0015D8C3 /* Dream Diary */,
+				FD13CDFD1BAB2E0F0015D8C3 /* Dream DiaryTests */,
+				FD13CE081BAB2E0F0015D8C3 /* Dream DiaryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD13CDE81BAB2E0F0015D8C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD13CDF81BAB2E0F0015D8C3 /* LaunchScreen.storyboard in Resources */,
+				FD13CDF51BAB2E0F0015D8C3 /* Assets.xcassets in Resources */,
+				FD13CDF31BAB2E0F0015D8C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD13CDFC1BAB2E0F0015D8C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD13CE071BAB2E0F0015D8C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD13CDE61BAB2E0F0015D8C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD13CDF01BAB2E0F0015D8C3 /* ViewController.swift in Sources */,
+				FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD13CDFA1BAB2E0F0015D8C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD13CE031BAB2E0F0015D8C3 /* Dream_DiaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD13CE051BAB2E0F0015D8C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD13CE0E1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD13CE001BAB2E0F0015D8C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD13CDE91BAB2E0F0015D8C3 /* Dream Diary */;
+			targetProxy = FD13CDFF1BAB2E0F0015D8C3 /* PBXContainerItemProxy */;
+		};
+		FD13CE0B1BAB2E0F0015D8C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD13CDE91BAB2E0F0015D8C3 /* Dream Diary */;
+			targetProxy = FD13CE0A1BAB2E0F0015D8C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD13CDF21BAB2E0F0015D8C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD13CDF71BAB2E0F0015D8C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD13CE101BAB2E0F0015D8C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD13CE111BAB2E0F0015D8C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD13CE131BAB2E0F0015D8C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Dream Diary/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-Diary";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FD13CE141BAB2E0F0015D8C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Dream Diary/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-Diary";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FD13CE161BAB2E0F0015D8C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Dream DiaryTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-DiaryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dream Diary.app/Dream Diary";
+			};
+			name = Debug;
+		};
+		FD13CE171BAB2E0F0015D8C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Dream DiaryTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-DiaryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dream Diary.app/Dream Diary";
+			};
+			name = Release;
+		};
+		FD13CE191BAB2E0F0015D8C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Dream DiaryUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-DiaryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Dream Diary";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FD13CE1A1BAB2E0F0015D8C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Dream DiaryUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-DiaryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Dream Diary";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD13CDE51BAB2E0F0015D8C3 /* Build configuration list for PBXProject "Dream Diary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD13CE101BAB2E0F0015D8C3 /* Debug */,
+				FD13CE111BAB2E0F0015D8C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD13CE121BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream Diary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD13CE131BAB2E0F0015D8C3 /* Debug */,
+				FD13CE141BAB2E0F0015D8C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FD13CE151BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD13CE161BAB2E0F0015D8C3 /* Debug */,
+				FD13CE171BAB2E0F0015D8C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FD13CE181BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD13CE191BAB2E0F0015D8C3 /* Debug */,
+				FD13CE1A1BAB2E0F0015D8C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD13CDE21BAB2E0F0015D8C3 /* Project object */;
+}

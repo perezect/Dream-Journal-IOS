@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,75 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="DJO-vj-7LN">
+                                <rect key="frame" x="20" y="30" width="560" height="520"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your dream below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNb-bz-tHr">
+                                        <rect key="frame" x="189" y="0.0" width="181.5" height="114"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7C-k7-8QL">
+                                        <rect key="frame" x="20" y="126" width="520" height="352"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="352" id="CNe-aX-Vap"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQI-rA-fca">
+                                        <rect key="frame" x="238" y="490" width="83" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="nEi-JE-Pdd"/>
+                                        </constraints>
+                                        <state key="normal" title="Save Dream"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="v7C-k7-8QL" firstAttribute="leading" secondItem="DJO-vj-7LN" secondAttribute="leading" constant="20" symbolic="YES" id="3ym-L1-bfP"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="4jv-fR-KNM"/>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5n1-ET-jJe"/>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="HHc-oI-sbX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DJO-vj-7LN" secondAttribute="bottom" constant="125" id="HHe-ek-ObR"/>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="OYc-3u-Gn0"/>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="9" id="Qyk-9y-dQB"/>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TSe-pm-ab2"/>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UQ8-y5-cgA"/>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Y1s-Rg-ugw"/>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="bpa-tb-90Y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DJO-vj-7LN" secondAttribute="bottom" constant="50" id="c45-hK-i5s"/>
+                            <constraint firstItem="DJO-vj-7LN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="fns-KB-co9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DJO-vj-7LN" secondAttribute="bottom" constant="50" id="kkQ-tw-jd5"/>
+                            <constraint firstAttribute="trailing" secondItem="DJO-vj-7LN" secondAttribute="trailing" id="voG-og-Ib9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4jv-fR-KNM"/>
+                                <exclude reference="5n1-ET-jJe"/>
+                                <exclude reference="Qyk-9y-dQB"/>
+                                <exclude reference="Y1s-Rg-ugw"/>
+                                <exclude reference="bpa-tb-90Y"/>
+                                <exclude reference="fns-KB-co9"/>
+                                <exclude reference="voG-og-Ib9"/>
+                                <exclude reference="HHe-ek-ObR"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="dreamNameLabel" destination="VNb-bz-tHr" id="Zns-8V-m0M"/>
+                        <outlet property="textBox" destination="v7C-k7-8QL" id="Y71-rO-lZr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="175" y="173"/>
         </scene>
     </scenes>
 </document>

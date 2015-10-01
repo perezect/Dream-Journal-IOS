@@ -35,7 +35,16 @@ class ViewController: UIViewController, UITextViewDelegate {
 //        
 //        dreamNameLabel.text = "Save your dream below"
 //    }
+    
+    // MARK: Actions
 
+    @IBAction func saveButton(sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Test", message: "It worked", preferredStyle: .Alert)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+    }
 
 //    @IBAction func saveButton(sender: UIButton) {
 //    }

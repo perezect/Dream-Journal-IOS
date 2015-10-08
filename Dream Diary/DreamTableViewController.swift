@@ -45,23 +45,31 @@ class DreamTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
+        
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return dreams.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        
+        let cellIdentifier = "DreamTableViewCell"
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DreamTableViewCell
+        
+        // Fetches the appropriate dream for the data source layout
+        
+        let dream = dreams[indexPath.row]
 
-        // Configure the cell...
+        cell.titleLabel.text = dream.dreamText
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -108,4 +116,15 @@ class DreamTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func unwindToDreamList (sender: UIStoryboardSegue) {
+        
+        if let sourceViewController = sender.sourceViewController as?
+            DreamViewController, dream = sourceViewController.dream {
+                
+                // Add new dream
+                let newIndexPath = NSIndexPath(forRow: dreams.count, inSection: 0)
+                dreams.append(dream)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        }
+    }
 }

@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48CA6CA71BBCE09200F56158 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA61BBCE09200F56158 /* Dream.swift */; settings = {ASSET_TAGS = (); }; };
+		48CA6CA81BBCE09200F56158 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA61BBCE09200F56158 /* Dream.swift */; settings = {ASSET_TAGS = (); }; };
+		48CA6CAA1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		48CA6CAB1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		48CA6CAD1BBCE58900F56158 /* DreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */; };
-		FD13CDF01BAB2E0F0015D8C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CDEF1BAB2E0F0015D8C3 /* ViewController.swift */; };
+		FD13CDF01BAB2E0F0015D8C3 /* DreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */; };
 		FD13CDF31BAB2E0F0015D8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */; };
 		FD13CDF51BAB2E0F0015D8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF41BAB2E0F0015D8C3 /* Assets.xcassets */; };
 		FD13CDF81BAB2E0F0015D8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */; };
@@ -34,9 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48CA6CA61BBCE09200F56158 /* Dream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
+		48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamTableViewCell.swift; sourceTree = "<group>"; };
+		48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamTableViewController.swift; sourceTree = "<group>"; };
 		FD13CDEA1BAB2E0F0015D8C3 /* Dream Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dream Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD13CDEF1BAB2E0F0015D8C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewController.swift; sourceTree = "<group>"; };
 		FD13CDF21BAB2E0F0015D8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD13CDF41BAB2E0F0015D8C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD13CDF71BAB2E0F0015D8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +106,14 @@
 			isa = PBXGroup;
 			children = (
 				FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */,
-				FD13CDEF1BAB2E0F0015D8C3 /* ViewController.swift */,
+				FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */,
 				FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */,
+				48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */,
+				48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */,
 				FD13CDF41BAB2E0F0015D8C3 /* Assets.xcassets */,
 				FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */,
 				FD13CDF91BAB2E0F0015D8C3 /* Info.plist */,
+				48CA6CA61BBCE09200F56158 /* Dream.swift */,
 			);
 			path = "Dream Diary";
 			sourceTree = "<group>";
@@ -254,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD13CDF01BAB2E0F0015D8C3 /* ViewController.swift in Sources */,
+				FD13CDF01BAB2E0F0015D8C3 /* DreamViewController.swift in Sources */,
 				FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */,
+				48CA6CAD1BBCE58900F56158 /* DreamTableViewController.swift in Sources */,
+				48CA6CA71BBCE09200F56158 /* Dream.swift in Sources */,
+				48CA6CAA1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CA6CAB1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */,
 				FD13CE031BAB2E0F0015D8C3 /* Dream_DiaryTests.swift in Sources */,
+				48CA6CA81BBCE09200F56158 /* Dream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +498,7 @@
 				FD13CE141BAB2E0F0015D8C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD13CE151BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +507,7 @@
 				FD13CE171BAB2E0F0015D8C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD13CE181BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +516,7 @@
 				FD13CE1A1BAB2E0F0015D8C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

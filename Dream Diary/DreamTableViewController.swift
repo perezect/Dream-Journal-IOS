@@ -20,15 +20,14 @@ class DreamTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem()
         
-        // Load the sample data
         
-        loadSampleDreams()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Load any saved meals, otherwise load sample data.
+        if let savedDreams = loadDreams() {
+            dreams += savedDreams
+        } else {
+            // Load the sample data
+            loadSampleDreams()
+        }
     }
     
     func loadSampleDreams () {
@@ -88,6 +87,7 @@ class DreamTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             dreams.removeAtIndex(indexPath.row)
+            saveDreams()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -147,6 +147,22 @@ class DreamTableViewController: UITableViewController {
                     dreams.append(dream)
                     tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
                 }
+                
+                saveDreams()
         }
     }
+    
+    // MARK: NSCoding
+    
+    func saveDreams() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(dreams, toFile: Dream.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save meals...")
+        }
+    }
+    
+    func loadDreams() -> [Dream]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Dream.ArchiveURL.path!) as? [Dream]
+    }
+
 }

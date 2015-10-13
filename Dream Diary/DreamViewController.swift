@@ -13,10 +13,14 @@ class DreamViewController: UIViewController, UITextViewDelegate {
     // MARK: Navigation
     @IBAction func cancel(sender: UIBarButtonItem) {
         
+        let isPresentingInAddDreamMode = presentingViewController is UINavigationController
+        
         // Dismiss scene without saving anything
-        dismissViewControllerAnimated(true, completion: nil)
-        
-        
+        if isPresentingInAddDreamMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -36,11 +40,20 @@ class DreamViewController: UIViewController, UITextViewDelegate {
     var dream: Dream?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         textBox.delegate = self
         
-//        checkValidDream()
+        // Set up views if editing an existing dream.
+        if let dream = dream {
+            textBox.text = dream.dreamText
+
+        }
+        
+        //        checkValidDream()
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -27,7 +27,10 @@ class DreamViewController: UIViewController, UITextViewDelegate {
         
         if saveButton === sender {
             let dreamText = textBox.text ?? ""
+//            let dreamTitle = ""
+//            let nightmareBool = true
             
+//            dream = Dream(dreamText: dreamText, dreamTitle: dreamTitle, nightmareBool: nightmareBool)
             dream = Dream(dreamText: dreamText)
         }
     }

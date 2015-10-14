@@ -32,6 +32,7 @@ class DreamTableViewController: UITableViewController {
     
     func loadSampleDreams () {
         
+//        let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", nightmareBool: false)!
         let dream1 = Dream(dreamText: "My nightmare")!
         
         dreams += [dream1]
@@ -127,7 +128,7 @@ class DreamTableViewController: UITableViewController {
             }
         }
         else if segue.identifier == "AddItem" {
-            print("Adding new drem.")
+            print("Adding new dream.")
         }
     }
 

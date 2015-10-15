@@ -8,14 +8,28 @@
 
 import UIKit
 
-class DreamTableViewController: UITableViewController {
+class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     
+        
     // MARK: Properties
     
     var dreams = [Dream]()
+    var filteredDreams = [Dream]()
+    var resultSearchController: UISearchController!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        
+        self.tableView.reloadData()
         
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem()
@@ -54,7 +68,12 @@ class DreamTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dreams.count
+        if (self.resultSearchController.active){
+            return self.filteredDreams.count
+        }
+        else{
+            return self.dreams.count
+        }
     }
 
     
@@ -64,13 +83,17 @@ class DreamTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DreamTableViewCell
         
-        // Fetches the appropriate dream for the data source layout
+        if (self.resultSearchController.active){
+            cell.titleLabel?.text = self.filteredDreams[indexPath.row].dreamText
+        }
         
-        let dream = dreams[indexPath.row]
-
-        cell.titleLabel.text = dream.dreamText
-
+        else{
+            cell.titleLabel?.text = self.dreams[indexPath.row].dreamText
+        }
+        
+        // Fetches the appropriate dream for the data source layout
         return cell
+
     }
 
 
@@ -91,8 +114,34 @@ class DreamTableViewController: UITableViewController {
             saveDreams()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        self.filteredDreams.removeAll(keepCapacity: false)
+        for var i = 0; i < dreams.count; ++i{
+            print(i, "test", dreams[i].dreamText)
+        }
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+        //hack
+        var textArray: [String] = []
+        for var i = 0; i < dreams.count; ++i{
+            textArray.append(dreams[i].dreamText)
+        }
+        let array = (textArray as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        var dreamArray: [Dream] = []
+        for var i = 0; i < array.count; ++i{
+            let filtDream = Dream(dreamText: array[i] as! String)
+            dreamArray.append(filtDream!)
+        }
+        //end hack
+        
+        self.filteredDreams = dreamArray
+        
+        self.tableView.reloadData()
     }
 
 

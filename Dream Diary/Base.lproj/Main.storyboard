@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="msY-6Z-Wa8" id="HU2-ya-pnZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk8-ij-aOq">
@@ -47,10 +47,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="tMk-pr-pW9" id="Fpb-Jd-zdH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgI-sr-Blh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="tMk-pr-pW9">
+                    <connections>
+                        <outlet property="delegate" destination="w0j-u4-vvg" id="0Li-my-1gC"/>
+                        <outlet property="searchContentsController" destination="w0j-u4-vvg" id="MEk-RY-qVi"/>
+                        <outlet property="searchResultsDataSource" destination="w0j-u4-vvg" id="3TT-cn-Z7k"/>
+                        <outlet property="searchResultsDelegate" destination="w0j-u4-vvg" id="NHW-cf-zVI"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="379" y="152"/>
+            <point key="canvasLocation" x="429" y="216"/>
         </scene>
         <!--New Dream-->
         <scene sceneID="tne-QT-ifu">
@@ -95,7 +106,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Dream" id="tAC-og-XCa">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" systemItem="cancel" id="8tb-1i-12I">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8tb-1i-12I">
                             <connections>
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="FvX-Ia-Gt3"/>
                             </connections>
@@ -119,6 +130,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Hg8-Uc-pWq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7q-6y-ePe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cVl-ix-8me" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bg7-oL-9h7">
@@ -130,7 +142,6 @@
                         <segue destination="w0j-u4-vvg" kind="relationship" relationship="rootViewController" id="yNL-DL-gne"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H7q-6y-ePe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-433" y="152"/>
         </scene>

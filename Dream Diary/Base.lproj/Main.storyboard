@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVl-ix-8me">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVl-ix-8me">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -12,6 +12,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Ev-d5-sD6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DreamTableViewCell" rowHeight="90" id="msY-6Z-Wa8" customClass="DreamTableViewCell" customModule="Dream_Diary" customModuleProvider="target">
@@ -23,12 +24,15 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk8-ij-aOq">
                                             <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="titleLabel" destination="Bk8-ij-aOq" id="f1y-HH-k1N"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="bPg-Yg-OzR"/>
@@ -80,6 +84,7 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7C-k7-8QL">
                                         <rect key="frame" x="20" y="0.0" width="520" height="503"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="352" id="CNe-aX-Vap"/>
                                         </constraints>
@@ -92,11 +97,13 @@
                                         </variation>
                                     </textView>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="v7C-k7-8QL" firstAttribute="leading" secondItem="DJO-vj-7LN" secondAttribute="leading" constant="20" symbolic="YES" id="3ym-L1-bfP"/>
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DJO-vj-7LN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="F2f-S0-NkG"/>
@@ -111,9 +118,9 @@
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="FvX-Ia-Gt3"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7jv-a0-ptX">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="7jv-a0-ptX">
                             <connections>
-                                <segue destination="oZZ-o6-Y0D" kind="unwind" unwindAction="unwindToDreamList:" id="1ub-Nc-E8V"/>
+                                <segue destination="QSu-Xe-IJD" kind="show" id="Ew8-pr-SHT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -123,25 +130,115 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="oZZ-o6-Y0D" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1927" y="152"/>
+        </scene>
+        <!--Dream Info-->
+        <scene sceneID="4wm-fC-WQ8">
+            <objects>
+                <viewController id="QSu-Xe-IJD" customClass="DreamInfoViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n5U-wi-da6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ydm-86-Nql"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xpw-wa-Gi0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jA4-e6-sAB">
+                                <rect key="frame" x="20" y="74" width="560" height="192"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dream Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAV-n7-Shp">
+                                        <rect key="frame" x="232" y="0.0" width="96" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="p8t-oF-JgL">
+                                        <rect key="frame" x="200" y="40" width="160" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-gy-qU5">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                <animations/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nightmare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDr-77-sVI">
+                                                <rect key="frame" x="79" y="0.0" width="81" height="31"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PNF-LR-WC2">
+                                        <rect key="frame" x="186" y="81" width="188" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VwG-of-F8g">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                <animations/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat Dream" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSI-Xw-Eia">
+                                                <rect key="frame" x="79" y="0.0" width="109" height="31"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKc-eK-yeN">
+                                        <rect key="frame" x="218" y="122" width="124" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Answer Questions"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jml-df-gRP">
+                                        <rect key="frame" x="262" y="162" width="37" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="SAVE"/>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jA4-e6-sAB" secondAttribute="trailing" id="CFc-1b-Nhr"/>
+                            <constraint firstItem="jA4-e6-sAB" firstAttribute="leading" secondItem="Xpw-wa-Gi0" secondAttribute="leadingMargin" id="hSP-8r-ewo"/>
+                            <constraint firstItem="jA4-e6-sAB" firstAttribute="top" secondItem="n5U-wi-da6" secondAttribute="bottom" constant="10" id="iRh-Ej-6iU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dream Info" id="nxj-iF-ot9">
+                        <barButtonItem key="leftBarButtonItem" id="gia-Ft-H3d"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Z9B-82-H8g">
+                            <connections>
+                                <action selector="cancel:" destination="QSu-Xe-IJD" id="yoa-kc-vV9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ur0-gy-iVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775" y="152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hg8-Uc-pWq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H7q-6y-ePe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cVl-ix-8me" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bg7-oL-9h7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="w0j-u4-vvg" kind="relationship" relationship="rootViewController" id="yNL-DL-gne"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7q-6y-ePe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-433" y="152"/>
         </scene>
@@ -153,6 +250,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xms-3h-78W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

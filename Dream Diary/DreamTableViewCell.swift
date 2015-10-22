@@ -12,7 +12,8 @@ class DreamTableViewCell: UITableViewCell {
     
     // MARK: Properties
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dreamTitleLabel: UILabel!
+    @IBOutlet weak var dreamDateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

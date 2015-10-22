@@ -22,11 +22,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk8-ij-aOq">
-                                            <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1K-zi-kcp">
+                                            <rect key="frame" x="8" y="8" width="78" height="73"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNN-1i-ml8">
+                                            <rect key="frame" x="94" y="8" width="498" height="73"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -34,7 +41,8 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <outlet property="titleLabel" destination="Bk8-ij-aOq" id="f1y-HH-k1N"/>
+                                    <outlet property="dreamDateLabel" destination="j1K-zi-kcp" id="IFi-vn-Gm6"/>
+                                    <outlet property="dreamTitleLabel" destination="YNN-1i-ml8" id="TPi-xO-FP1"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="bPg-Yg-OzR"/>
                                 </connections>
                             </tableViewCell>
@@ -120,12 +128,12 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="7jv-a0-ptX">
                             <connections>
-                                <segue destination="QSu-Xe-IJD" kind="show" id="Ew8-pr-SHT"/>
+                                <segue destination="QSu-Xe-IJD" kind="show" identifier="AddInfo" id="Ew8-pr-SHT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="SaveButton" destination="7jv-a0-ptX" id="ZsB-i9-pth"/>
+                        <outlet property="nextButton" destination="7jv-a0-ptX" id="hkZ-Xl-gL5"/>
                         <outlet property="textBox" destination="v7C-k7-8QL" id="Y71-rO-lZr"/>
                     </connections>
                 </viewController>
@@ -152,12 +160,12 @@
                                         <rect key="frame" x="232" y="0.0" width="96" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="p8t-oF-JgL">
                                         <rect key="frame" x="200" y="40" width="160" height="31"/>
                                         <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-gy-qU5">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-gy-qU5">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                                 <animations/>
                                             </switch>
@@ -174,7 +182,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PNF-LR-WC2">
                                         <rect key="frame" x="186" y="81" width="188" height="31"/>
                                         <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VwG-of-F8g">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VwG-of-F8g">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                                 <animations/>
                                             </switch>
@@ -197,6 +205,9 @@
                                         <rect key="frame" x="262" y="162" width="37" height="30"/>
                                         <animations/>
                                         <state key="normal" title="SAVE"/>
+                                        <connections>
+                                            <segue destination="pWn-EJ-wAf" kind="unwind" unwindAction="unwindToDreamList:" id="1XP-k2-gXW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -214,12 +225,19 @@
                         <barButtonItem key="leftBarButtonItem" id="gia-Ft-H3d"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Z9B-82-H8g">
                             <connections>
-                                <action selector="cancel:" destination="QSu-Xe-IJD" id="yoa-kc-vV9"/>
+                                <segue destination="pWn-EJ-wAf" kind="unwind" unwindAction="unwindToDreamListWithoutSaving:" id="OUA-L4-IDi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nightmareSwitch" destination="TgX-gy-qU5" id="6KE-nv-5AQ"/>
+                        <outlet property="repeatSwitch" destination="VwG-of-F8g" id="tOz-wI-Azs"/>
+                        <outlet property="saveButton" destination="Jml-df-gRP" id="Ldj-Eu-9Z5"/>
+                        <outlet property="titleTextBox" destination="PAV-n7-Shp" id="Tzg-zR-SHL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ur0-gy-iVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pWn-EJ-wAf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2775" y="152"/>
         </scene>

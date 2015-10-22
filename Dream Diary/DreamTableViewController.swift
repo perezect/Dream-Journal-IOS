@@ -46,8 +46,8 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     
     func loadSampleDreams () {
         
-//        let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", nightmareBool: false)!
-        let dream1 = Dream(dreamText: "My nightmare")!
+        let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", isNightmare: true, isRepeat: false, date: NSDate())!
+        //let dream1 = Dream(dreamText: "My nightmare")!
         
         dreams += [dream1]
         
@@ -61,13 +61,11 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
         
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if (self.resultSearchController.active){
             return self.filteredDreams.count
         }
@@ -82,13 +80,19 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
         let cellIdentifier = "DreamTableViewCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DreamTableViewCell
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "M/d"    // format dates as month/day
         
         if (self.resultSearchController.active){
-            cell.titleLabel?.text = self.filteredDreams[indexPath.row].dreamText
+            //cell.dreamTextLabel?.text = self.filteredDreams[indexPath.row].dreamText
+            cell.dreamTitleLabel?.text = self.filteredDreams[indexPath.row].dreamTitle
+            cell.dreamDateLabel?.text = dateFormatter.stringFromDate(self.filteredDreams[indexPath.row].date)
         }
         
         else{
-            cell.titleLabel?.text = self.dreams[indexPath.row].dreamText
+            //cell.dreamTextLabel?.text = self.dreams[indexPath.row].dreamText
+            cell.dreamTitleLabel?.text = self.dreams[indexPath.row].dreamTitle
+            cell.dreamDateLabel?.text = dateFormatter.stringFromDate(self.dreams[indexPath.row].date)
         }
         
         // Fetches the appropriate dream for the data source layout
@@ -185,7 +189,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     @IBAction func unwindToDreamList (sender: UIStoryboardSegue) {
         
         if let sourceViewController = sender.sourceViewController as?
-            DreamViewController, dream = sourceViewController.dream {
+            DreamInfoViewController, dream = sourceViewController.dream {
                 
                 if let selectedIndexPath = tableView.indexPathForSelectedRow {
                     // Update an existing Dream.
@@ -200,6 +204,14 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
                 
                 saveDreams()
         }
+    }
+    
+    @IBAction func unwindToDreamListWithoutSaving(sender: UIStoryboardSegue)
+    {
+        //let sourceViewController = sender.sourceViewController
+        // Pull any data from the view controller which initiated the unwind segue.
+        //print(dreams[1].dreamText)
+        //saveDreams()
     }
     
     // MARK: NSCoding

@@ -25,19 +25,27 @@ class DreamViewController: UIViewController, UITextViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if saveButton === sender {
+        if nextButton === sender {
             let dreamText = textBox.text ?? ""
-//            let dreamTitle = ""
-//            let nightmareBool = true
-            
-//            dream = Dream(dreamText: dreamText, dreamTitle: dreamTitle, nightmareBool: nightmareBool)
-            dream = Dream(dreamText: dreamText)
+            /*if isNewDream {
+                //dream = Dream(dreamText: dreamText)
+                let infoVC = segue.destinationViewController as! DreamInfoViewController
+                infoVC.dream = dream
+            }
+            else {
+                let infoVC = segue.destinationViewController as! DreamInfoViewController
+                infoVC.dreamText = dreamText
+            }*/
+            let infoVC = segue.destinationViewController as! DreamInfoViewController
+            infoVC.dreamText = dreamText
+            infoVC.dream = dream
         }
     }
     
     
     @IBOutlet weak var textBox: UITextView!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
+    var isNewDream = true;
     
     // Constructed by adding a new dream.
     var dream: Dream?
@@ -52,7 +60,7 @@ class DreamViewController: UIViewController, UITextViewDelegate {
         // Set up views if editing an existing dream.
         if let dream = dream {
             textBox.text = dream.dreamText
-
+            isNewDream = false
         }
         
         //        checkValidDream()
@@ -79,7 +87,7 @@ class DreamViewController: UIViewController, UITextViewDelegate {
         
 //        checkValidDream()
         
-        navigationItem.title = textBox.text
+        //navigationItem.title = textBox.text
     }
     
 //    func textViewDidBeginEditing(textView: UITextView) {

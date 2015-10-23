@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVl-ix-8me">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVl-ix-8me">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -23,17 +23,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1K-zi-kcp">
-                                            <rect key="frame" x="8" y="8" width="78" height="73"/>
+                                            <rect key="frame" x="8" y="8" width="95" height="73"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNN-1i-ml8">
-                                            <rect key="frame" x="94" y="8" width="498" height="73"/>
+                                            <rect key="frame" x="111" y="8" width="481" height="73"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -87,37 +87,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="DJO-vj-7LN">
-                                <rect key="frame" x="20" y="69" width="560" height="503"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bau-Uq-EYB">
+                                <rect key="frame" x="20" y="74" width="560" height="344"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7C-k7-8QL">
-                                        <rect key="frame" x="20" y="0.0" width="520" height="503"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dream Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjW-EM-c0s">
+                                        <rect key="frame" x="232" y="0.0" width="96" height="30"/>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="352" id="CNe-aX-Vap"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="CNe-aX-Vap"/>
-                                            </mask>
-                                        </variation>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-Ua-Zxz">
+                                        <rect key="frame" x="190" y="40" width="180" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKZ-uK-IZ1">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                <animations/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nightmare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3v-5D-BrK">
+                                                <rect key="frame" x="99" y="0.0" width="81" height="31"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="e8G-lW-YhZ">
+                                        <rect key="frame" x="204" y="81" width="153" height="31"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJe-KJ-Ydu">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                <animations/>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5o-bK-KKp">
+                                                <rect key="frame" x="99" y="0.0" width="54" height="31"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-Fd-wZU">
+                                        <rect key="frame" x="176" y="122" width="208" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rir-iE-cbC">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Tags"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-Ke-J7O">
+                                                <rect key="frame" x="113" y="0.0" width="95" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Proper Nouns"/>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bab-ZQ-jM6">
+                                        <rect key="frame" x="160" y="162" width="240" height="142"/>
+                                        <animations/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHB-nd-IzC">
+                                        <rect key="frame" x="218" y="314" width="124" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Answer Questions"/>
+                                    </button>
                                 </subviews>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstItem="v7C-k7-8QL" firstAttribute="leading" secondItem="DJO-vj-7LN" secondAttribute="leading" constant="20" symbolic="YES" id="3ym-L1-bfP"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DJO-vj-7LN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="F2f-S0-NkG"/>
-                            <constraint firstItem="DJO-vj-7LN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HUb-J6-ruq"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DJO-vj-7LN" secondAttribute="bottom" constant="28" id="jg8-Mk-Fk3"/>
-                            <constraint firstItem="DJO-vj-7LN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nd5-Gt-9jm"/>
+                            <constraint firstItem="Bau-Uq-EYB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NB2-Mb-LRp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bau-Uq-EYB" secondAttribute="trailing" id="WyU-7n-SgS"/>
+                            <constraint firstItem="Bau-Uq-EYB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="pJD-EE-MkM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Dream" id="tAC-og-XCa">
@@ -126,120 +177,24 @@
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="FvX-Ia-Gt3"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="7jv-a0-ptX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hxk-Vf-fuG">
                             <connections>
-                                <segue destination="QSu-Xe-IJD" kind="show" identifier="AddInfo" id="Ew8-pr-SHT"/>
+                                <segue destination="zCz-yb-Hxo" kind="unwind" unwindAction="unwindToDreamList:" id="64z-zc-w17"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nextButton" destination="7jv-a0-ptX" id="hkZ-Xl-gL5"/>
-                        <outlet property="textBox" destination="v7C-k7-8QL" id="Y71-rO-lZr"/>
+                        <outlet property="dreamTextBox" destination="Bab-ZQ-jM6" id="VrC-E8-T1N"/>
+                        <outlet property="dreamTitleBox" destination="rjW-EM-c0s" id="vjz-8p-Cah"/>
+                        <outlet property="nightmareSwitch" destination="OKZ-uK-IZ1" id="ffv-3n-oiX"/>
+                        <outlet property="repeatSwitch" destination="JJe-KJ-Ydu" id="5qJ-pD-OWH"/>
+                        <outlet property="saveButton" destination="hxk-Vf-fuG" id="dW5-D4-f7c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="zCz-yb-Hxo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1927" y="152"/>
-        </scene>
-        <!--Dream Info-->
-        <scene sceneID="4wm-fC-WQ8">
-            <objects>
-                <viewController id="QSu-Xe-IJD" customClass="DreamInfoViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="n5U-wi-da6"/>
-                        <viewControllerLayoutGuide type="bottom" id="ydm-86-Nql"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Xpw-wa-Gi0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jA4-e6-sAB">
-                                <rect key="frame" x="20" y="74" width="560" height="192"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dream Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAV-n7-Shp">
-                                        <rect key="frame" x="232" y="0.0" width="96" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="p8t-oF-JgL">
-                                        <rect key="frame" x="200" y="40" width="160" height="31"/>
-                                        <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TgX-gy-qU5">
-                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                <animations/>
-                                            </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nightmare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDr-77-sVI">
-                                                <rect key="frame" x="79" y="0.0" width="81" height="31"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <animations/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PNF-LR-WC2">
-                                        <rect key="frame" x="186" y="81" width="188" height="31"/>
-                                        <subviews>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VwG-of-F8g">
-                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                <animations/>
-                                            </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat Dream" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSI-Xw-Eia">
-                                                <rect key="frame" x="79" y="0.0" width="109" height="31"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <animations/>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKc-eK-yeN">
-                                        <rect key="frame" x="218" y="122" width="124" height="30"/>
-                                        <animations/>
-                                        <state key="normal" title="Answer Questions"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jml-df-gRP">
-                                        <rect key="frame" x="262" y="162" width="37" height="30"/>
-                                        <animations/>
-                                        <state key="normal" title="SAVE"/>
-                                        <connections>
-                                            <segue destination="pWn-EJ-wAf" kind="unwind" unwindAction="unwindToDreamList:" id="1XP-k2-gXW"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <animations/>
-                            </stackView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="jA4-e6-sAB" secondAttribute="trailing" id="CFc-1b-Nhr"/>
-                            <constraint firstItem="jA4-e6-sAB" firstAttribute="leading" secondItem="Xpw-wa-Gi0" secondAttribute="leadingMargin" id="hSP-8r-ewo"/>
-                            <constraint firstItem="jA4-e6-sAB" firstAttribute="top" secondItem="n5U-wi-da6" secondAttribute="bottom" constant="10" id="iRh-Ej-6iU"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Dream Info" id="nxj-iF-ot9">
-                        <barButtonItem key="leftBarButtonItem" id="gia-Ft-H3d"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Z9B-82-H8g">
-                            <connections>
-                                <segue destination="pWn-EJ-wAf" kind="unwind" unwindAction="unwindToDreamListWithoutSaving:" id="OUA-L4-IDi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="nightmareSwitch" destination="TgX-gy-qU5" id="6KE-nv-5AQ"/>
-                        <outlet property="repeatSwitch" destination="VwG-of-F8g" id="tOz-wI-Azs"/>
-                        <outlet property="saveButton" destination="Jml-df-gRP" id="Ldj-Eu-9Z5"/>
-                        <outlet property="titleTextBox" destination="PAV-n7-Shp" id="Tzg-zR-SHL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ur0-gy-iVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="pWn-EJ-wAf" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2775" y="152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hg8-Uc-pWq">

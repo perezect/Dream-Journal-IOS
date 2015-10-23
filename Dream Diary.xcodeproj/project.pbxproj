@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48CA6CA71BBCE09200F56158 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA61BBCE09200F56158 /* Dream.swift */; settings = {ASSET_TAGS = (); }; };
-		48CA6CA81BBCE09200F56158 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA61BBCE09200F56158 /* Dream.swift */; settings = {ASSET_TAGS = (); }; };
-		48CA6CAA1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		48CA6CAB1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		48CA6CAD1BBCE58900F56158 /* DreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		48CA6CA71BBCE09200F56158 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA61BBCE09200F56158 /* Dream.swift */; };
+		48CA6CA81BBCE09200F56158 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA61BBCE09200F56158 /* Dream.swift */; };
+		48CA6CAA1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */; };
+		48CA6CAB1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */; };
+		48CA6CAD1BBCE58900F56158 /* DreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */; };
 		FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */; };
 		FD13CDF01BAB2E0F0015D8C3 /* DreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */; };
 		FD13CDF31BAB2E0F0015D8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */; };
@@ -19,7 +19,6 @@
 		FD13CDF81BAB2E0F0015D8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */; };
 		FD13CE031BAB2E0F0015D8C3 /* Dream_DiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE021BAB2E0F0015D8C3 /* Dream_DiaryTests.swift */; };
 		FD13CE0E1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */; };
-		FDF259FC1BD6C5AD00100BB9 /* DreamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF259FB1BD6C5AD00100BB9 /* DreamInfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +55,6 @@
 		FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dream DiaryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream_DiaryUITests.swift; sourceTree = "<group>"; };
 		FD13CE0F1BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FDF259FB1BD6C5AD00100BB9 /* DreamInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DreamInfoViewController.swift; path = ../DreamInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,6 @@
 		FD13CDEC1BAB2E0F0015D8C3 /* Dream Diary */ = {
 			isa = PBXGroup;
 			children = (
-				FDF259FB1BD6C5AD00100BB9 /* DreamInfoViewController.swift */,
 				FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */,
 				FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */,
 				FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */,
@@ -271,7 +268,6 @@
 			files = (
 				FD13CDF01BAB2E0F0015D8C3 /* DreamViewController.swift in Sources */,
 				FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */,
-				FDF259FC1BD6C5AD00100BB9 /* DreamInfoViewController.swift in Sources */,
 				48CA6CAD1BBCE58900F56158 /* DreamTableViewController.swift in Sources */,
 				48CA6CA71BBCE09200F56158 /* Dream.swift in Sources */,
 				48CA6CAA1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */,

@@ -189,7 +189,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     @IBAction func unwindToDreamList (sender: UIStoryboardSegue) {
         
         if let sourceViewController = sender.sourceViewController as?
-            DreamInfoViewController, dream = sourceViewController.dream {
+            DreamViewController, dream = sourceViewController.dream {
                 
                 if let selectedIndexPath = tableView.indexPathForSelectedRow {
                     // Update an existing Dream.

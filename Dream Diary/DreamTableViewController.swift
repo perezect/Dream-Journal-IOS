@@ -47,7 +47,6 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     func loadSampleDreams () {
         
         let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", isNightmare: true, isRepeat: false, date: NSDate())!
-        //let dream1 = Dream(dreamText: "My nightmare")!
         
         dreams += [dream1]
         
@@ -83,12 +82,14 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d"    // format dates as month/day
         
+        // Filter dreams if you are searching
         if (self.resultSearchController.active){
             //cell.dreamTextLabel?.text = self.filteredDreams[indexPath.row].dreamText
             cell.dreamTitleLabel?.text = self.filteredDreams[indexPath.row].dreamTitle
             cell.dreamDateLabel?.text = dateFormatter.stringFromDate(self.filteredDreams[indexPath.row].date)
         }
         
+        // Otherwise just show all the dreams
         else{
             //cell.dreamTextLabel?.text = self.dreams[indexPath.row].dreamText
             cell.dreamTitleLabel?.text = self.dreams[indexPath.row].dreamTitle
@@ -102,9 +103,8 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
 
 
 
-    // Override to support conditional editing of the table view.
+    // Supports conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
 
@@ -126,25 +126,30 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     func updateSearchResultsForSearchController(searchController: UISearchController)
     {
         self.filteredDreams.removeAll(keepCapacity: false)
-        for var i = 0; i < dreams.count; ++i{
-            print(i, "test", dreams[i].dreamText)
-        }
+        
         let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
-        //hack
+        
+        
         var textArray: [String] = []
+        
+        // Go through and get strings and put the text of each one in an array
         for var i = 0; i < dreams.count; ++i{
             textArray.append(dreams[i].dreamText)
         }
+        
+        // Filter the array of strings to get dreams with the text you are looking for
         let array = (textArray as NSArray).filteredArrayUsingPredicate(searchPredicate)
         var dreamArray: [Dream] = []
+        
+        // Put the text back into as dreams
         for var i = 0; i < array.count; ++i{
             let filtDream = Dream(dreamText: array[i] as! String)
             dreamArray.append(filtDream!)
         }
-        //end hack
         
         self.filteredDreams = dreamArray
         
+        // Reload the tableView with the filtered dreams
         self.tableView.reloadData()
     }
 

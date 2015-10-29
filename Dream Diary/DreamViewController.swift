@@ -50,8 +50,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
     @IBAction func unwindToDreamView(sender: UIStoryboardSegue) {
         if let _ = sender.sourceViewController as? TagTableViewController {
-            // Add a new meal.
-            print("2")
+            // Add a new dream.
         }
     }
     
@@ -81,14 +80,10 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             repeatSwitch.on = dream.isRepeat
             dreamTextBox.text = dream.dreamText
         }
-        
-        //        checkValidDream()
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     
@@ -123,9 +118,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     }
     
     func textViewDidEndEditing(textView: UITextView) {
-        
-//        checkValidDream()
-        
+                
         //navigationItem.title = textBox.text
     }
     

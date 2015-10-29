@@ -14,26 +14,22 @@ class TagTableViewController: UITableViewController {
     
     var tags = [String]()
     var selectedTags = [String]()
+    var lastSelectedIndexPath = NSIndexPath(forRow: -1, inSection: 0)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // put in edit button
-        //navigationItem.leftBarButtonItem = editButtonItem()
         // load dummy tags so it looks good
         
         loadSampleTags()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     func loadSampleTags() {
         let tag1 = "test tag"
-        
         tags += [tag1]
     }
     
@@ -46,7 +42,6 @@ class TagTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-
         return 1
     }
 
@@ -56,23 +51,18 @@ class TagTableViewController: UITableViewController {
     }
     
     
-    var lastSelectedIndexPath = NSIndexPath(forRow: -1, inSection: 0)
-
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "TagTableViewCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TagTableViewCell
-        
+
         let tag = tags[indexPath.row]
         
         cell.tagLabel.text = tag
         
+        //Set checkmarks
         if cell.selected {
-            print("1")
-
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            //selectedTags.append(cell.tagLabel.text!)
         }
             
         else {
@@ -84,6 +74,7 @@ class TagTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        // Figure out if cell has been selected and set a checkmark if it is
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         
         if cell!.selected == true{
@@ -99,25 +90,28 @@ class TagTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
     {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        
+        // When cell deselected take away the checkmark
         if cell!.selected == false{
             cell!.accessoryType = UITableViewCellAccessoryType.None
         }
-        //tableView.indexPathsForSelectedRows
-       
     }
 
     
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
+    // Mark: Actions 
+    
+    
+    // Set up alert view to pop up when you want to add a new tag
     @IBAction func newTagAlert(sender: AnyObject) {
-
+        
         var inputTextField: UITextField?
         
+        // Set the title and message of the alert
         let alertController = UIAlertController(title: "Add tag below", message: "Tags can be anything in your dream that will help you clasify or remember it.", preferredStyle: .Alert)
         
         let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-            // Add a new tag to the tableview
+            // Add a new tag to the tableview when you select okay
             let newIndexPath = NSIndexPath(forRow: self.tags.count, inSection: 0)
             self.tags.append((inputTextField?.text)!)
             self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
@@ -132,48 +126,6 @@ class TagTableViewController: UITableViewController {
         } 
         
         presentViewController(alertController, animated: true, completion: nil)
-        
-       // let defaultAction = UIAlertAction(title: "Add", style: .Default, handler: nil)
-        
-       // alertController.addAction(defaultAction)
-        /*
-        //Create the Cancel action
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
-            //TODO
-        }
-        alertController.addAction(cancelAction)
-        
-        //Create add
-        let nextAction: UIAlertAction = UIAlertAction(title: "Next", style: .Default) { action -> Void in
-            //TODO
-        }
-        alertController.addAction(nextAction)
-        
-        alertController.addTextFieldWithConfigurationHandler { textField -> Void in
-            //TextField configuration
-            textField.textColor = UIColor.blueColor()
-        }
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-*/
-        /*
-let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-// Do whatever you want with inputTextField?.text
-
-        ln("\(inputTextField?.text)")
-})
-let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in }
-
-alertController.addAction(ok)
-alertController.addAction(cancel)
-
-alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
-inputTextField = textField
-}
-
-presentViewController(alertController, animated: true, completion: nil)
-*/
-
     }
     
     // TODO talk about UI and how to add edit, new tag and go back
@@ -218,7 +170,7 @@ presentViewController(alertController, animated: true, completion: nil)
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Go back to old view/
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if doneButton === sender {
             if let indexPaths = tableView.indexPathsForSelectedRows {

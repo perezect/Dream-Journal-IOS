@@ -78,7 +78,7 @@ class Dream: NSObject, NSCoding {
         self.dreamTitle = dreamTitle
         self.isNightmare = isNightmare
         self.isRepeat = isRepeat
-        self.date = NSDate()
+        self.date = date
         
         super.init()
         

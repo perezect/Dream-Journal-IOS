@@ -97,7 +97,7 @@ class TagTableViewController: UITableViewController {
     }
 
     
-    @IBOutlet weak var doneButton: UIBarButtonItem!
+    //@IBOutlet weak var doneButton: UIBarButtonItem!
     
     // Mark: Actions 
     
@@ -129,7 +129,7 @@ class TagTableViewController: UITableViewController {
     }
     
     // TODO talk about UI and how to add edit, new tag and go back
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -150,7 +150,7 @@ class TagTableViewController: UITableViewController {
         }
     }
 
-*/
+
 
     /*
     // Override to support rearranging the table view.
@@ -171,7 +171,7 @@ class TagTableViewController: UITableViewController {
     // MARK: - Navigation
     
     // Go back to old view/
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if doneButton === sender {
             if let indexPaths = tableView.indexPathsForSelectedRows {
                 for var i = 0; i < indexPaths.count; ++i {
@@ -183,7 +183,7 @@ class TagTableViewController: UITableViewController {
             }
 
         }
-    }
+    }*/
     
 
 }

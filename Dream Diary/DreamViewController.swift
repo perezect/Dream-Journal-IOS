@@ -73,12 +73,20 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         dreamTextBox.delegate = self
         dreamTitleBox.delegate = self
         
+        nightmareSwitch.on = false
+        repeatSwitch.on = false
+        
         // Set up views if editing an existing dream.
         if let dream = dream {
             dreamTitleBox.text = dream.dreamTitle
             nightmareSwitch.on = dream.isNightmare
             repeatSwitch.on = dream.isRepeat
             dreamTextBox.text = dream.dreamText
+        }
+        // add placeholder for the dream text if nothing is there
+        if dreamTextBox.text == "" {
+            dreamTextBox.text = "Enter the dream"
+            dreamTextBox.textColor = UIColor.lightGrayColor()
         }
     }
 
@@ -117,10 +125,20 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         return true
     }
     
-    func textViewDidEndEditing(textView: UITextView) {
-                
-        //navigationItem.title = textBox.text
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == UIColor.lightGrayColor() {
+            textView.text = nil
+            textView.textColor = UIColor.blackColor()
+        }
     }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Enter the dream"
+            textView.textColor = UIColor.lightGrayColor()
+        }
+    }
+
     
 //    func textViewDidBeginEditing(textView: UITextView) {
 //        

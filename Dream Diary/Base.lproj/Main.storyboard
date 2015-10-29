@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVl-ix-8me">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVl-ix-8me">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -137,6 +137,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Tags"/>
+                                                <connections>
+                                                    <segue destination="8CF-4T-lXK" kind="show" id="MRz-w3-icj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-Ke-J7O">
                                                 <rect key="frame" x="113" y="0.0" width="95" height="30"/>
@@ -196,6 +199,61 @@
             </objects>
             <point key="canvasLocation" x="1927" y="152"/>
         </scene>
+        <!--Choose Tags-->
+        <scene sceneID="aa1-lv-OFj">
+            <objects>
+                <tableViewController id="8CF-4T-lXK" customClass="TagTableViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="c7L-b2-in4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TagTableViewCell" rowHeight="90" id="xQI-PL-xld" customClass="TagTableViewCell" customModule="Dream_Diary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQI-PL-xld" id="SWB-LY-7yK">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHn-fN-jQ6">
+                                            <rect key="frame" x="18" y="19" width="286" height="56"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tagLabel" destination="SHn-fN-jQ6" id="WBk-Ld-Qyu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8CF-4T-lXK" id="fsc-aR-aJK"/>
+                            <outlet property="delegate" destination="8CF-4T-lXK" id="4YZ-J8-CYO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose Tags" id="RwY-db-YSl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="h2M-rV-644">
+                            <connections>
+                                <segue destination="79N-c2-FZw" kind="unwind" unwindAction="unwindToDreamList:" id="6jb-dF-zSK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New Tag" id="C5Q-nN-83g">
+                            <connections>
+                                <action selector="newTagAlert:" destination="8CF-4T-lXK" id="Xtv-JK-i7x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="h2M-rV-644" id="4cs-Ws-on4"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ZX-sT-wfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="79N-c2-FZw" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3429" y="152"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hg8-Uc-pWq">
             <objects>
@@ -233,6 +291,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaS-Ci-SbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1155" y="680"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rLy-E0-iya">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zFg-fg-vpw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kda-Fp-hjc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fG4-Tc-7ys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2617" y="152"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

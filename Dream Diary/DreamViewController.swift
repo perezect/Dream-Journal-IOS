@@ -48,6 +48,13 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         }
     }
     
+    @IBAction func unwindToDreamView(sender: UIStoryboardSegue) {
+        if let _ = sender.sourceViewController as? TagTableViewController {
+            // Add a new meal.
+            print("2")
+        }
+    }
+    
     
 
     @IBOutlet weak var saveButton: UIBarButtonItem!

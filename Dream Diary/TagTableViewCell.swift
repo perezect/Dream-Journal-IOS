@@ -9,7 +9,11 @@
 import UIKit
 
 class TagTableViewCell: UITableViewCell {
+    
+    // MARK: Properties
 
+    @IBOutlet weak var tagLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

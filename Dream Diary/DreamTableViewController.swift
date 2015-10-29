@@ -35,7 +35,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
         navigationItem.leftBarButtonItem = editButtonItem()
         
         
-        // Load any saved meals, otherwise load sample data.
+        // Load any saved dreams, otherwise load sample data.
         if let savedDreams = loadDreams() {
             dreams += savedDreams
         } else {

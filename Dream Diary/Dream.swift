@@ -18,6 +18,8 @@ class Dream: NSObject, NSCoding {
         aCoder.encodeObject(isNightmare, forKey: PropertyKey.nightmareBoolKey)
         aCoder.encodeObject(isRepeat, forKey: PropertyKey.repeatBoolKey)
         aCoder.encodeObject(date, forKey: PropertyKey.dateKey)
+        aCoder.encodeObject(tags, forKey: PropertyKey.tagKey)
+        
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -28,10 +30,11 @@ class Dream: NSObject, NSCoding {
         let isNightmare = aDecoder.decodeObjectForKey(PropertyKey.nightmareBoolKey) as! Bool
         let isRepeat = aDecoder.decodeObjectForKey(PropertyKey.repeatBoolKey) as! Bool
         let date = aDecoder.decodeObjectForKey(PropertyKey.dateKey) as! NSDate
+        let tags = aDecoder.decodeObjectForKey(PropertyKey.tagKey) as! [Tag]
         
         // Must call designated initializer.
         //self.init(dreamText: dreamText)
-        self.init(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding, isNightmare: isNightmare, isRepeat: isRepeat, date: date)
+        self.init(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding, isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags)
     }
     
     
@@ -44,6 +47,7 @@ class Dream: NSObject, NSCoding {
     var isNightmare: Bool
     var isRepeat: Bool
     var date: NSDate
+    var tags: [Tag]
     
     struct PropertyKey {
         
@@ -53,6 +57,7 @@ class Dream: NSObject, NSCoding {
         static let nightmareBoolKey = "nightmareBool"
         static let repeatBoolKey = "repeatBool"
         static let dateKey = "dateKey"
+        static let tagKey = "tagKey"
     }
     
     // TODO: Add title, tags, proper nouns, date, properties.... etc.
@@ -66,6 +71,7 @@ class Dream: NSObject, NSCoding {
         self.isNightmare = false
         self.isRepeat = false
         self.date = NSDate()
+        self.tags = [Tag]()
         
         super.init()
         
@@ -73,7 +79,7 @@ class Dream: NSObject, NSCoding {
             return nil
         }
     }
-    init? (dreamText: String, dreamTitle: String, alternateEnding: String, isNightmare: Bool, isRepeat: Bool, date: NSDate) {
+    init? (dreamText: String, dreamTitle: String, alternateEnding: String, isNightmare: Bool, isRepeat: Bool, date: NSDate, tags: [Tag]) {
         
         self.dreamText = dreamText
         self.dreamTitle = dreamTitle
@@ -81,6 +87,7 @@ class Dream: NSObject, NSCoding {
         self.isNightmare = isNightmare
         self.isRepeat = isRepeat
         self.date = date
+        self.tags = tags
         
         super.init()
         

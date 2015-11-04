@@ -15,7 +15,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     
     var dreams = [Dream]()
     var filteredDreams = [Dream]()
-    var tags = [String]()       // TODO: change to be a list of Tag objects
+    //var tags = [Tag]()
     var resultSearchController: UISearchController!
 
 
@@ -43,25 +43,13 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
             // Load the sample data
             loadSampleDreams()
         }
-        
-        /*if let savedTages = loadTags() {
-            tags += savedTages
-        } else {
-            loadSampleTags()
-        }*/
     }
     
     func loadSampleDreams () {
         
-        let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", alternateEnding: "", isNightmare: true, isRepeat: false, date: NSDate())!
+        let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", alternateEnding: "", isNightmare: true, isRepeat: false, date: NSDate(), tags: [Tag]())!
         
         dreams += [dream1]
-    }
-    
-    func loadSampleTags () {
-        let tag1 = "Falling"
-        
-        tags += [tag1]
     }
 
     override func didReceiveMemoryWarning() {
@@ -189,7 +177,6 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetail" {
             let dreamDetailViewController = segue.destinationViewController as! DreamViewController
-    
             // Get the cell that generated this segue.
             if let selectedDreamCell = sender as? DreamTableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedDreamCell)!
@@ -230,6 +217,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
         // Pull any data from the view controller which initiated the unwind segue.
         //print(dreams[1].dreamText)
         //saveDreams()
+        print(dreams[1].tags[2].selected)
     }
     
     // MARK: NSCoding
@@ -244,13 +232,5 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     func loadDreams() -> [Dream]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Dream.ArchiveURL.path!) as? [Dream]
     }
-    
-    /*func saveTags() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tags, toFile: Tag.ArchiveURL.path!)
-    }
-    
-    func loadTags() {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(<#T##path: String##String#>)
-    }*/
 
 }

@@ -152,7 +152,7 @@
                                                 <animations/>
                                                 <state key="normal" title="Tags"/>
                                                 <connections>
-                                                    <segue destination="8CF-4T-lXK" kind="show" id="MRz-w3-icj"/>
+                                                    <segue destination="8CF-4T-lXK" kind="show" identifier="ShowTags" id="MRz-w3-icj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-Ke-J7O">

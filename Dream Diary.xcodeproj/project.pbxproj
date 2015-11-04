@@ -11,8 +11,6 @@
 		37518BF41BDD980B002EE7B1 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37518BF21BDD980B002EE7B1 /* TagTableViewCell.swift */; };
 		37518BF51BDD980B002EE7B1 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37518BF21BDD980B002EE7B1 /* TagTableViewCell.swift */; };
 		37518BF71BDDAAD4002EE7B1 /* TagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37518BF61BDDAAD4002EE7B1 /* TagTableViewController.swift */; };
-		37518BF81BDDAAD4002EE7B1 /* TagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37518BF61BDDAAD4002EE7B1 /* TagTableViewController.swift */; };
-		37518BF91BDDAAD4002EE7B1 /* TagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37518BF61BDDAAD4002EE7B1 /* TagTableViewController.swift */; };
 		48CA6CA71BBCE09200F56158 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA61BBCE09200F56158 /* Dream.swift */; };
 		48CA6CA81BBCE09200F56158 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA61BBCE09200F56158 /* Dream.swift */; };
 		48CA6CAA1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */; };
@@ -25,6 +23,7 @@
 		FD13CDF81BAB2E0F0015D8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */; };
 		FD13CE031BAB2E0F0015D8C3 /* Dream_DiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE021BAB2E0F0015D8C3 /* Dream_DiaryTests.swift */; };
 		FD13CE0E1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */; };
+		FD1A34EF1BEA893300AAA61C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
 		FD6202351BE9B09600130E96 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,12 +120,12 @@
 				37518BF61BDDAAD4002EE7B1 /* TagTableViewController.swift */,
 				37518BF21BDD980B002EE7B1 /* TagTableViewCell.swift */,
 				48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */,
-				FD13CDF41BAB2E0F0015D8C3 /* Assets.xcassets */,
-				FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */,
-				FD13CDF91BAB2E0F0015D8C3 /* Info.plist */,
 				48CA6CA61BBCE09200F56158 /* Dream.swift */,
 				48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */,
 				FD6202341BE9B09600130E96 /* Tag.swift */,
+				FD13CDF41BAB2E0F0015D8C3 /* Assets.xcassets */,
+				FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */,
+				FD13CDF91BAB2E0F0015D8C3 /* Info.plist */,
 			);
 			path = "Dream Diary";
 			sourceTree = "<group>";
@@ -296,7 +295,7 @@
 			files = (
 				37518BF41BDD980B002EE7B1 /* TagTableViewCell.swift in Sources */,
 				48CA6CAB1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */,
-				37518BF81BDDAAD4002EE7B1 /* TagTableViewController.swift in Sources */,
+				FD1A34EF1BEA893300AAA61C /* Tag.swift in Sources */,
 				FD13CE031BAB2E0F0015D8C3 /* Dream_DiaryTests.swift in Sources */,
 				48CA6CA81BBCE09200F56158 /* Dream.swift in Sources */,
 			);
@@ -308,7 +307,6 @@
 			files = (
 				37518BF51BDD980B002EE7B1 /* TagTableViewCell.swift in Sources */,
 				FD13CE0E1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift in Sources */,
-				37518BF91BDDAAD4002EE7B1 /* TagTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

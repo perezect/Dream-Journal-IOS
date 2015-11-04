@@ -34,16 +34,16 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             let isRepeat = repeatSwitch.on
             // create a dream object with all of the user's information
             dream = Dream(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding,
-                isNightmare: isNightmare, isRepeat: isRepeat, date: NSDate())
+                isNightmare: isNightmare, isRepeat: isRepeat, date: NSDate(), tags: tags)
             print (dream?.dreamTitle, dream?.dreamText)
+            saveTags()
+        }
+        else if segue.identifier == "ShowTags" {
+            let tagViewController = segue.destinationViewController as! TagTableViewController
+            tagViewController.tags = tags
         }
     }
-    
-    @IBAction func unwindToDreamView(sender: UIStoryboardSegue) {
-        if let _ = sender.sourceViewController as? TagTableViewController {
-            // Add a new dream.
-        }
-    }
+
     
     // MARK: Properties
 
@@ -56,6 +56,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     var kbHeight: CGFloat!              // keeps track of keyboard height
     var keyboardMoveHeight: CGFloat!    // keeps track of how far we need to move the view
     var dream: Dream?
+    var tags: [Tag] = []
     
     // Everything that happens when the view loads
     override func viewDidLoad() {
@@ -77,6 +78,23 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             repeatSwitch.on = dream.isRepeat
             dreamTextBox.text = dream.dreamText
             alternateEndingTextBox.text = dream.alternateEnding
+            tags = dream.tags
+//            for tag in dream.tags {
+//                tags.append(tag.copy() as! Tag)
+//            }
+        }
+        
+        // load tags
+        if (tags.isEmpty) {
+            if let savedTags = loadGeneralTags() {
+                tags += savedTags
+                for tag in tags {
+                    tag.selected = false
+                }
+                print("loaded general tags")
+            } else {
+                loadSampleTags()
+            }
         }
         
         // add placeholder for the dream text if nothing is there
@@ -97,6 +115,24 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func saveTags() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tags, toFile: Tag.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save tags...")
+        }
+        print("saved tags")
+    }
+    
+    func loadGeneralTags() -> [Tag]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Tag.ArchiveURL.path!) as? [Tag]
+    }
+    
+    func loadSampleTags () {
+        let tag1 = Tag(name: "Falling")!
+        
+        tags += [tag1]
     }
     
 

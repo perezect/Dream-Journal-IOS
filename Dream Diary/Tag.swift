@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 
 class Tag: NSObject, NSCoding {
     // MARK: Properties

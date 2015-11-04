@@ -12,26 +12,23 @@ class TagTableViewController: UITableViewController {
     
     //Mark Properties 
     
-    var tags = [String]()
-    var selectedTags = [String]()
-    var lastSelectedIndexPath = NSIndexPath(forRow: -1, inSection: 0)
+    var tags = [Tag]()
+    //var lastSelectedIndexPath = NSIndexPath(forRow: -1, inSection: 0)
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // load dummy tags so it looks good
-        
-        loadSampleTags()
+        //loadSampleTags()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
     }
     
-    func loadSampleTags() {
-        let tag1 = "test tag"
+    /*func loadSampleTags() {
+        let tag1 = Tag(name: "test tag")!
         tags += [tag1]
-    }
+    }*/
     
 
     override func didReceiveMemoryWarning() {
@@ -55,13 +52,12 @@ class TagTableViewController: UITableViewController {
         let cellIdentifier = "TagTableViewCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TagTableViewCell
-
         let tag = tags[indexPath.row]
-        
-        cell.tagLabel.text = tag
+        cell.selectionStyle = .None
+        cell.tagLabel.text = tag.name
         
         //Set checkmarks
-        if cell.selected {
+        if tag.selected {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         }
             
@@ -76,23 +72,30 @@ class TagTableViewController: UITableViewController {
     {
         // Figure out if cell has been selected and set a checkmark if it is
         let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let touchedTag = tags[indexPath.row]
         
-        if cell!.selected == true{
+        if !touchedTag.selected {
             cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+            tags[indexPath.row].selected = true
         }
             
         else{
             cell!.accessoryType = UITableViewCellAccessoryType.None
+            tags[indexPath.row].selected = false
         }
+        cell!.selected = false
         
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
     {
+        let touchedTag = tags[indexPath.row]
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         // When cell deselected take away the checkmark
-        if cell!.selected == false{
+        if touchedTag.selected {
             cell!.accessoryType = UITableViewCellAccessoryType.None
+            tags[indexPath.row].selected = false
+            cell!.selected = false
         }
     }
 
@@ -113,8 +116,9 @@ class TagTableViewController: UITableViewController {
         let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             // Add a new tag to the tableview when you select okay
             let newIndexPath = NSIndexPath(forRow: self.tags.count, inSection: 0)
-            self.tags.append((inputTextField?.text)!)
+            self.tags.append(Tag(name: (inputTextField?.text)!)!)
             self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            //self.saveTags()
         })
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in }
         
@@ -143,13 +147,12 @@ class TagTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             tags.removeAtIndex(indexPath.row)
-            //saveDreams()
+            //saveTags()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-
 
 
     /*
@@ -171,19 +174,23 @@ class TagTableViewController: UITableViewController {
     // MARK: - Navigation
     
     // Go back to old view/
-    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if doneButton === sender {
-            if let indexPaths = tableView.indexPathsForSelectedRows {
-                for var i = 0; i < indexPaths.count; ++i {
-                    
-                    let thisPath = indexPaths[i] as NSIndexPath
-                    let cell = tableView.cellForRowAtIndexPath(thisPath) as! TagTableViewCell
-                    print(cell.tagLabel.text)
-                }
-            }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dreamVC = segue.destinationViewController as! DreamViewController
+        dreamVC.tags = tags
+        //if doneButton === sender {
+//            if let indexPaths = tableView.indexPathsForSelectedRows {
+//                for var i = 0; i < indexPaths.count; ++i {
+//                    
+//                    let thisPath = indexPaths[i] as NSIndexPath
+//                    let cell = tableView.cellForRowAtIndexPath(thisPath) as! TagTableViewCell
+//                    print(cell.tagLabel.text)
+//                }
+//            }
 
-        }
-    }*/
+        //}
+    }
+    
+    
     
 
 }

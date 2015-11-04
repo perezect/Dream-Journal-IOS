@@ -46,7 +46,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     
     func loadSampleDreams () {
         
-        let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", isNightmare: true, isRepeat: false, date: NSDate())!
+        let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", alternateEnding: "", isNightmare: true, isRepeat: false, date: NSDate())!
         
         dreams += [dream1]
         

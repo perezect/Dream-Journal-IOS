@@ -87,8 +87,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bau-Uq-EYB">
-                                <rect key="frame" x="20" y="74" width="560" height="344"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bau-Uq-EYB">
+                                <rect key="frame" x="20" y="84" width="560" height="404"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dream Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjW-EM-c0s">
                                         <rect key="frame" x="232" y="0.0" width="96" height="30"/>
@@ -102,6 +102,9 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKZ-uK-IZ1">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                                 <animations/>
+                                                <connections>
+                                                    <action selector="nightmareToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="PZI-8N-RHf"/>
+                                                </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nightmare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3v-5D-BrK">
                                                 <rect key="frame" x="99" y="0.0" width="81" height="31"/>
@@ -130,18 +133,21 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bab-ZQ-jM6">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bab-ZQ-jM6">
                                         <rect key="frame" x="160" y="122" width="240" height="142"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="SNs-1a-YRh"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-Fd-wZU">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-Fd-wZU">
                                         <rect key="frame" x="176" y="274" width="208" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rir-iE-cbC">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rir-iE-cbC">
                                                 <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Tags"/>
@@ -149,7 +155,7 @@
                                                     <segue destination="8CF-4T-lXK" kind="show" id="MRz-w3-icj"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-Ke-J7O">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-Ke-J7O">
                                                 <rect key="frame" x="113" y="0.0" width="95" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Proper Nouns"/>
@@ -157,21 +163,36 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHB-nd-IzC">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHB-nd-IzC">
                                         <rect key="frame" x="218" y="314" width="124" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Answer Questions"/>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-zY-WbQ">
+                                        <rect key="frame" x="160" y="354" width="240" height="50"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wKk-MZ-lHh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                    </textView>
                                 </subviews>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstItem="3Oz-zY-WbQ" firstAttribute="leading" secondItem="Bab-ZQ-jM6" secondAttribute="leading" id="FEI-lm-rgW"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Bau-Uq-EYB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NB2-Mb-LRp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Bau-Uq-EYB" secondAttribute="trailing" id="WyU-7n-SgS"/>
-                            <constraint firstItem="Bau-Uq-EYB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="pJD-EE-MkM"/>
+                            <constraint firstItem="Bau-Uq-EYB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Axj-bS-zB5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bau-Uq-EYB" secondAttribute="bottom" constant="112" id="UY9-bs-KjF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bau-Uq-EYB" secondAttribute="trailing" id="dgE-pp-ejv"/>
+                            <constraint firstItem="Bau-Uq-EYB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="jPC-hm-yAU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Dream" id="tAC-og-XCa">
@@ -187,6 +208,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="alternateEndingTextBox" destination="3Oz-zY-WbQ" id="9Wy-QE-Pfi"/>
                         <outlet property="dreamTextBox" destination="Bab-ZQ-jM6" id="VrC-E8-T1N"/>
                         <outlet property="dreamTitleBox" destination="rjW-EM-c0s" id="vjz-8p-Cah"/>
                         <outlet property="nightmareSwitch" destination="OKZ-uK-IZ1" id="ffv-3n-oiX"/>

@@ -25,6 +25,7 @@
 		FD13CDF81BAB2E0F0015D8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF61BAB2E0F0015D8C3 /* LaunchScreen.storyboard */; };
 		FD13CE031BAB2E0F0015D8C3 /* Dream_DiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE021BAB2E0F0015D8C3 /* Dream_DiaryTests.swift */; };
 		FD13CE0E1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */; };
+		FD6202351BE9B09600130E96 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dream DiaryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream_DiaryUITests.swift; sourceTree = "<group>"; };
 		FD13CE0F1BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD6202341BE9B09600130E96 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				FD13CDF91BAB2E0F0015D8C3 /* Info.plist */,
 				48CA6CA61BBCE09200F56158 /* Dream.swift */,
 				48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */,
+				FD6202341BE9B09600130E96 /* Tag.swift */,
 			);
 			path = "Dream Diary";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6202351BE9B09600130E96 /* Tag.swift in Sources */,
 				FD13CDF01BAB2E0F0015D8C3 /* DreamViewController.swift in Sources */,
 				FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */,
 				37518BF71BDDAAD4002EE7B1 /* TagTableViewController.swift in Sources */,

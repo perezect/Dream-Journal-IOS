@@ -15,6 +15,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     
     var dreams = [Dream]()
     var filteredDreams = [Dream]()
+    var tags = [String]()       // TODO: change to be a list of Tag objects
     var resultSearchController: UISearchController!
 
 
@@ -42,6 +43,12 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
             // Load the sample data
             loadSampleDreams()
         }
+        
+        /*if let savedTages = loadTags() {
+            tags += savedTages
+        } else {
+            loadSampleTags()
+        }*/
     }
     
     func loadSampleDreams () {
@@ -49,7 +56,12 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
         let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", alternateEnding: "", isNightmare: true, isRepeat: false, date: NSDate())!
         
         dreams += [dream1]
+    }
+    
+    func loadSampleTags () {
+        let tag1 = "Falling"
         
+        tags += [tag1]
     }
 
     override func didReceiveMemoryWarning() {
@@ -232,5 +244,13 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     func loadDreams() -> [Dream]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Dream.ArchiveURL.path!) as? [Dream]
     }
+    
+    /*func saveTags() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tags, toFile: Tag.ArchiveURL.path!)
+    }
+    
+    func loadTags() {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(<#T##path: String##String#>)
+    }*/
 
 }

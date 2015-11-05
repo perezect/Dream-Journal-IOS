@@ -77,14 +77,10 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             nightmareSwitch.on = dream.isNightmare
             repeatSwitch.on = dream.isRepeat
             dreamTextBox.text = dream.dreamText
-            alternateEndingTextBox.text = dream.alternateEnding
             tags = dream.tags
-//            for tag in dream.tags {
-//                tags.append(tag.copy() as! Tag)
-//            }
         }
         
-        // load tags
+        // load tags if we aren't editing an existing dream
         if (tags.isEmpty) {
             if let savedTags = loadGeneralTags() {
                 tags += savedTags
@@ -95,6 +91,22 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             } else {
                 loadSampleTags()
             }
+        }
+        
+        addPlaceholders()
+    
+        // hide the new ending box if not a nightmare
+        alternateEndingTextBox.hidden = !nightmareSwitch.on
+    }
+    
+    // add placeholder text to the textview's if nothing is there
+    func addPlaceholders() {
+        if dreamTextBox.text == "Enter the dream" {
+            dreamTextBox.textColor = UIColor.lightGrayColor()
+        }
+        alternateEndingTextBox.text = dream!.alternateEnding
+        if alternateEndingTextBox.text == "Enter a new ending" {
+            alternateEndingTextBox.textColor = UIColor.lightGrayColor()
         }
         
         // add placeholder for the dream text if nothing is there
@@ -108,9 +120,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             alternateEndingTextBox.text = "Enter a new ending"
             alternateEndingTextBox.textColor = UIColor.lightGrayColor()
         }
-        
-        // hide the new ending box if not a nightmare
-        alternateEndingTextBox.hidden = !nightmareSwitch.on
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -147,18 +157,21 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
     // MARK Keyboard (preventing keyboard from covering text views)
    
-    // set up notification for keyboard
+    // set up notifications for keyboard
    override func viewWillAppear(animated:Bool) {
         super.viewWillAppear(animated)
     
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        print("added notification")
     }
     
-    // get rid of keyboard notification when leaving
+    // get rid of keyboard notifications when leaving
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
     }
     
     // gets the height of the keyboard when it is about to show up
@@ -166,8 +179,19 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         if let userInfo = notification.userInfo {
             if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
                 kbHeight = keyboardSize.height
+                print (kbHeight)
             }
         }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        // need if running on simulator without the iphone keyboard present
+        /*if let userInfo = notification.userInfo {
+            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                kbHeight = keyboardSize.height
+                print (kbHeight)
+            }
+        }*/
     }
     
     // Moves the view up or down so that the keyboard doesn't cover a text view
@@ -213,7 +237,11 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             textView.textColor = UIColor.blackColor()
         }
         // calculate the amount to move the view by so the keyboard doesn't cover the textView
-        keyboardMoveHeight = textView.frame.origin.y + textView.frame.height + kbHeight + textView.superview!.frame.origin.y - self.view.frame.height
+        let txtY = textView.frame.origin.y
+        let textH = textView.frame.height
+        let sprY = textView.superview!.frame.origin.y
+        let totalH = self.view.frame.height
+        keyboardMoveHeight = txtY + textH + kbHeight + sprY - totalH
         self.animateTextField(true)
     }
     

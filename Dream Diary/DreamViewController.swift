@@ -43,8 +43,9 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             tagViewController.tags = tags
         }
         else if segue.identifier == "AnswerQuestions" {
-            let questionViewController = segue.destinationViewController as! QuestionViewController
-            questionViewController.answers = answers
+            let navVC = segue.destinationViewController as! UINavigationController
+            let questionVC = navVC.viewControllers[0] as! QuestionViewController
+            questionVC.answers = answers
         }
     }
 
@@ -222,7 +223,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
     @IBAction func unwindFromQuestionPage(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? QuestionViewController {
-        answers = sourceViewController.answers
+            answers = sourceViewController.answers
         }
     }
 

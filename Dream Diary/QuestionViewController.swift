@@ -35,12 +35,6 @@ class QuestionViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        var currentVCIndex = 
-    }
-    
     
     // MARK Keyboard (preventing keyboard from covering text views)
     

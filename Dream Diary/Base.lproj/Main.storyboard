@@ -168,7 +168,7 @@
                                         <animations/>
                                         <state key="normal" title="Answer Questions"/>
                                         <connections>
-                                            <segue destination="BeV-lh-LL2" kind="show" identifier="AnswerQuestions" id="a60-po-il7"/>
+                                            <segue destination="zBB-pu-VHT" kind="show" identifier="AnswerQuestions" id="a60-po-il7"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-zY-WbQ">
@@ -308,6 +308,13 @@
                             <constraint firstItem="j0u-Hx-7Dl" firstAttribute="top" secondItem="APA-h5-qtu" secondAttribute="bottom" constant="10" id="fp8-ak-VWX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fd3-O3-fOv">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Dream Info" id="OH2-xy-FQ4">
+                            <connections>
+                                <segue destination="Ivh-bk-CuU" kind="unwind" unwindAction="unwindFromQuestionPage:" id="dCI-de-gzq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="question1AnswerBox" destination="hDU-Jd-IdX" id="GGw-CL-Mda"/>
                         <outlet property="question2AnswerBox" destination="dgo-xi-y3b" id="6Ho-Cy-lsv"/>
@@ -315,8 +322,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOh-Zt-Ojq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ivh-bk-CuU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="933"/>
+            <point key="canvasLocation" x="2739" y="933"/>
         </scene>
         <!--Choose Tags-->
         <scene sceneID="aa1-lv-OFj">
@@ -405,6 +413,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaS-Ci-SbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1155" y="680"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cm5-f1-uow">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zBB-pu-VHT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KQ2-qj-lgJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BeV-lh-LL2" kind="relationship" relationship="rootViewController" id="bhH-yy-17a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NZr-hl-J6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1927" y="933"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

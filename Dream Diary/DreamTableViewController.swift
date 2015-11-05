@@ -47,7 +47,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     
     func loadSampleDreams () {
         
-        let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", alternateEnding: "", isNightmare: true, isRepeat: false, date: NSDate(), tags: [Tag]())!
+        let dream1 = Dream(dreamText: "My nightmare", dreamTitle: "A Bad Dream", alternateEnding: "", isNightmare: true, isRepeat: false, date: NSDate(), tags: [Tag](), answer1: "", answer2: "", answer3: "", properNouns: [Tag]())!
         
         dreams += [dream1]
     }
@@ -217,7 +217,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
         // Pull any data from the view controller which initiated the unwind segue.
         //print(dreams[1].dreamText)
         //saveDreams()
-        print(dreams[1].tags[2].selected)
+        //print(dreams[1].tags[2].selected)
     }
     
     // MARK: NSCoding

@@ -139,7 +139,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="SNs-1a-YRh"/>
+                                            <constraint firstAttribute="width" constant="240" id="LSu-a9-lj6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -168,7 +168,7 @@
                                         <animations/>
                                         <state key="normal" title="Answer Questions"/>
                                         <connections>
-                                            <segue destination="BeV-lh-LL2" kind="show" id="a60-po-il7"/>
+                                            <segue destination="BeV-lh-LL2" kind="show" identifier="AnswerQuestions" id="a60-po-il7"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-zY-WbQ">
@@ -177,7 +177,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="wKk-MZ-lHh"/>
+                                            <constraint firstAttribute="height" constant="50" id="Rec-Uw-XdF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -185,7 +185,7 @@
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="3Oz-zY-WbQ" firstAttribute="leading" secondItem="Bab-ZQ-jM6" secondAttribute="leading" id="FEI-lm-rgW"/>
+                                    <constraint firstItem="Bab-ZQ-jM6" firstAttribute="leading" secondItem="3Oz-zY-WbQ" secondAttribute="leading" id="rp2-qU-XxY"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -193,7 +193,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Bau-Uq-EYB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Axj-bS-zB5"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bau-Uq-EYB" secondAttribute="bottom" constant="112" id="UY9-bs-KjF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bau-Uq-EYB" secondAttribute="bottom" constant="112" id="C5w-iI-7nr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bau-Uq-EYB" secondAttribute="trailing" id="dgE-pp-ejv"/>
                             <constraint firstItem="Bau-Uq-EYB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="jPC-hm-yAU"/>
                         </constraints>
@@ -224,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="1927" y="152"/>
         </scene>
-        <!--View Controller-->
+        <!--Question View Controller-->
         <scene sceneID="eiS-C4-ImH">
             <objects>
-                <viewController id="BeV-lh-LL2" sceneMemberID="viewController">
+                <viewController id="BeV-lh-LL2" customClass="QuestionViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="APA-h5-qtu"/>
                         <viewControllerLayoutGuide type="bottom" id="G6R-aH-2Cm"/>
@@ -236,67 +236,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gxn-wn-qDd">
-                                <rect key="frame" x="20" y="64" width="560" height="516"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j0u-Hx-7Dl">
+                                <rect key="frame" x="20" y="74" width="560" height="516"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What was the first thing you thought of when you recorded the dream?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4N1-0a-Oue">
-                                        <rect key="frame" x="10" y="0.0" width="540" height="1"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What was the first thing you thought of when you recorded the dream?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUn-GB-jMv">
+                                        <rect key="frame" x="10" y="0.0" width="540" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eK2-cA-hld">
-                                        <rect key="frame" x="160" y="11" width="240" height="141"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hDU-Jd-IdX">
+                                        <rect key="frame" x="160" y="31" width="240" height="100"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="JPC-A4-wpr"/>
+                                            <constraint firstAttribute="height" constant="100" id="QF6-Qi-qO1"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What was your feeling in the dream?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uv-q7-rKh">
-                                        <rect key="frame" x="141" y="162" width="278" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What was your feeling in the dream?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRo-9w-hAP">
+                                        <rect key="frame" x="141" y="141" width="278" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="28Z-p4-xtW">
-                                        <rect key="frame" x="160" y="193" width="240" height="141"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dgo-xi-y3b">
+                                        <rect key="frame" x="160" y="172" width="240" height="100"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="KI3-2u-J1a"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What was left unfinished at the end of the dream?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Eo-QY-KMj">
-                                        <rect key="frame" x="90" y="344" width="381" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What was left unfinished at the end of the dream?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glf-G3-9kF">
+                                        <rect key="frame" x="0.0" y="282" width="560" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RQ6-nD-YJM">
-                                        <rect key="frame" x="160" y="375" width="240" height="141"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w4i-ec-OST">
+                                        <rect key="frame" x="160" y="313" width="240" height="203"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
                                 </subviews>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="w4i-ec-OST" firstAttribute="leading" secondItem="dgo-xi-y3b" secondAttribute="leading" id="5io-cl-Hb7"/>
+                                    <constraint firstItem="hDU-Jd-IdX" firstAttribute="leading" secondItem="dgo-xi-y3b" secondAttribute="leading" id="PgF-xe-Fot"/>
+                                    <constraint firstItem="Glf-G3-9kF" firstAttribute="leading" secondItem="j0u-Hx-7Dl" secondAttribute="leading" id="dPX-VI-cI5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Glf-G3-9kF" secondAttribute="trailing" id="hov-ja-98w"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="G6R-aH-2Cm" firstAttribute="top" secondItem="Gxn-wn-qDd" secondAttribute="bottom" constant="20" id="9f0-3r-hYv"/>
-                            <constraint firstItem="Gxn-wn-qDd" firstAttribute="leading" secondItem="ekE-Io-AMk" secondAttribute="leadingMargin" id="VhQ-Nu-mhd"/>
-                            <constraint firstItem="Gxn-wn-qDd" firstAttribute="top" secondItem="APA-h5-qtu" secondAttribute="bottom" id="pRF-Nj-0KA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Gxn-wn-qDd" secondAttribute="trailing" id="rPg-ui-C1O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j0u-Hx-7Dl" secondAttribute="trailing" id="CKl-tT-ron"/>
+                            <constraint firstItem="j0u-Hx-7Dl" firstAttribute="leading" secondItem="ekE-Io-AMk" secondAttribute="leadingMargin" id="FCH-Gc-FnT"/>
+                            <constraint firstItem="G6R-aH-2Cm" firstAttribute="top" secondItem="j0u-Hx-7Dl" secondAttribute="bottom" constant="10" id="eOH-MF-Zhc"/>
+                            <constraint firstItem="j0u-Hx-7Dl" firstAttribute="top" secondItem="APA-h5-qtu" secondAttribute="bottom" constant="10" id="fp8-ak-VWX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="question1AnswerBox" destination="hDU-Jd-IdX" id="GGw-CL-Mda"/>
+                        <outlet property="question2AnswerBox" destination="dgo-xi-y3b" id="6Ho-Cy-lsv"/>
+                        <outlet property="question3AnswerBox" destination="w4i-ec-OST" id="iiO-SG-W4g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOh-Zt-Ojq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -392,6 +408,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bPg-Yg-OzR"/>
+        <segue reference="Ufh-dx-3P8"/>
     </inferredMetricsTieBreakers>
 </document>

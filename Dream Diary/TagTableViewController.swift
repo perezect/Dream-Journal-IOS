@@ -177,6 +177,7 @@ class TagTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dreamVC = segue.destinationViewController as! DreamViewController
         dreamVC.tags = tags
+        print("called")
         //if doneButton === sender {
 //            if let indexPaths = tableView.indexPathsForSelectedRows {
 //                for var i = 0; i < indexPaths.count; ++i {

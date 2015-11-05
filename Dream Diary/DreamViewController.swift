@@ -34,13 +34,17 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             let isRepeat = repeatSwitch.on
             // create a dream object with all of the user's information
             dream = Dream(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding,
-                isNightmare: isNightmare, isRepeat: isRepeat, date: NSDate(), tags: tags)
+                isNightmare: isNightmare, isRepeat: isRepeat, date: NSDate(), tags: tags, answer1: answers[0], answer2: answers[1], answer3: answers[2], properNouns: properNouns)
             print (dream?.dreamTitle, dream?.dreamText)
             saveTags()
         }
         else if segue.identifier == "ShowTags" {
             let tagViewController = segue.destinationViewController as! TagTableViewController
             tagViewController.tags = tags
+        }
+        else if segue.identifier == "AnswerQuestions" {
+            let questionViewController = segue.destinationViewController as! QuestionViewController
+            questionViewController.answers = answers
         }
     }
 
@@ -57,6 +61,8 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     var keyboardMoveHeight: CGFloat!    // keeps track of how far we need to move the view
     var dream: Dream?
     var tags: [Tag] = []
+    var properNouns: [Tag] = []
+    var answers: [String] = ["", "", ""]
     
     // Everything that happens when the view loads
     override func viewDidLoad() {
@@ -97,16 +103,19 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
         // hide the new ending box if not a nightmare
         alternateEndingTextBox.hidden = !nightmareSwitch.on
+        print("answers", answers[0])
     }
     
     // add placeholder text to the textview's if nothing is there
     func addPlaceholders() {
-        if dreamTextBox.text == "Enter the dream" {
-            dreamTextBox.textColor = UIColor.lightGrayColor()
-        }
-        alternateEndingTextBox.text = dream!.alternateEnding
-        if alternateEndingTextBox.text == "Enter a new ending" {
-            alternateEndingTextBox.textColor = UIColor.lightGrayColor()
+        if let dream = dream {
+            if dreamTextBox.text == "Enter the dream" {
+                dreamTextBox.textColor = UIColor.lightGrayColor()
+            }
+            alternateEndingTextBox.text = dream.alternateEnding
+            if alternateEndingTextBox.text == "Enter a new ending" {
+                alternateEndingTextBox.textColor = UIColor.lightGrayColor()
+            }
         }
         
         // add placeholder for the dream text if nothing is there
@@ -208,7 +217,13 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
     // updates whether the alternate ending box is shown whenever the user toggles the nightmare switch
     @IBAction func nightmareToggled(sender: UISwitch) {
-        alternateEndingTextBox.hidden = !sender.on
+        alternateEndingTextBox.hidden = !sender.on      // TODO: find way to do this that doesn't give constraint issues
+    }
+    
+    @IBAction func unwindFromQuestionPage(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? QuestionViewController {
+        answers = sourceViewController.answers
+        }
     }
 
     

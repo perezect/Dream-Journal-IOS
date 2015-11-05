@@ -24,6 +24,7 @@
 		FD13CE031BAB2E0F0015D8C3 /* Dream_DiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE021BAB2E0F0015D8C3 /* Dream_DiaryTests.swift */; };
 		FD13CE0E1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */; };
 		FD1A34EF1BEA893300AAA61C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
+		FD53F6E31BEC02C400588C99 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */; };
 		FD6202351BE9B09600130E96 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dream DiaryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream_DiaryUITests.swift; sourceTree = "<group>"; };
 		FD13CE0F1BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FD6202341BE9B09600130E96 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 			children = (
 				FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */,
 				FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */,
+				FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */,
 				FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */,
 				37518BF61BDDAAD4002EE7B1 /* TagTableViewController.swift */,
 				37518BF21BDD980B002EE7B1 /* TagTableViewCell.swift */,
@@ -286,6 +289,7 @@
 				48CA6CAD1BBCE58900F56158 /* DreamTableViewController.swift in Sources */,
 				48CA6CA71BBCE09200F56158 /* Dream.swift in Sources */,
 				48CA6CAA1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */,
+				FD53F6E31BEC02C400588C99 /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

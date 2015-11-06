@@ -24,7 +24,6 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if saveButton === sender {
             // retrieve all the information the user has entered
             let dreamText = dreamTextBox.text ?? ""
@@ -34,17 +33,19 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             let isRepeat = repeatSwitch.on
             // create a dream object with all of the user's information
             dream = Dream(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding,
-                isNightmare: isNightmare, isRepeat: isRepeat, date: NSDate(), tags: tags, answer1: answers[0], answer2: answers[1], answer3: answers[2], properNouns: properNouns)
+                isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answers: answers, properNouns: properNouns)
             print (dream?.dreamTitle, dream?.dreamText)
             saveTags()
         }
+        // going to the tag page
         else if segue.identifier == "ShowTags" {
             let tagViewController = segue.destinationViewController as! TagTableViewController
             tagViewController.tags = tags
         }
+        // going to the question page
         else if segue.identifier == "AnswerQuestions" {
             let navVC = segue.destinationViewController as! UINavigationController
-            let questionVC = navVC.viewControllers[0] as! QuestionViewController
+            let questionVC = navVC.topViewController as! QuestionViewController
             questionVC.answers = answers
         }
     }
@@ -62,6 +63,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     var keyboardMoveHeight: CGFloat!    // keeps track of how far we need to move the view
     var dream: Dream?
     var tags: [Tag] = []
+    var date: NSDate = NSDate()
     var properNouns: [Tag] = []
     var answers: [String] = ["", "", ""]
     
@@ -85,6 +87,8 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             repeatSwitch.on = dream.isRepeat
             dreamTextBox.text = dream.dreamText
             tags = dream.tags
+            date = dream.date
+            answers = dream.answers
         }
         
         // load tags if we aren't editing an existing dream
@@ -224,6 +228,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     @IBAction func unwindFromQuestionPage(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? QuestionViewController {
             answers = sourceViewController.answers
+            print("answers", answers[0])
         }
     }
 

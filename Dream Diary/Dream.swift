@@ -19,9 +19,7 @@ class Dream: NSObject, NSCoding {
         aCoder.encodeObject(isRepeat, forKey: PropertyKey.repeatBoolKey)
         aCoder.encodeObject(date, forKey: PropertyKey.dateKey)
         aCoder.encodeObject(tags, forKey: PropertyKey.tagKey)
-        aCoder.encodeObject(answer1, forKey: PropertyKey.answer1Key)
-        aCoder.encodeObject(answer2, forKey: PropertyKey.answer2Key)
-        aCoder.encodeObject(answer3, forKey: PropertyKey.answer3Key)
+        aCoder.encodeObject(answers, forKey: PropertyKey.answerKey)
         aCoder.encodeObject(properNouns, forKey: PropertyKey.properNounKey)
     }
     
@@ -34,14 +32,12 @@ class Dream: NSObject, NSCoding {
         let isRepeat = aDecoder.decodeObjectForKey(PropertyKey.repeatBoolKey) as! Bool
         let date = aDecoder.decodeObjectForKey(PropertyKey.dateKey) as! NSDate
         let tags = aDecoder.decodeObjectForKey(PropertyKey.tagKey) as! [Tag]
-        let answer1 = aDecoder.decodeObjectForKey(PropertyKey.answer1Key) as! String
-        let answer2 = aDecoder.decodeObjectForKey(PropertyKey.answer2Key) as! String
-        let answer3 = aDecoder.decodeObjectForKey(PropertyKey.answer3Key) as! String
+        let answers = aDecoder.decodeObjectForKey(PropertyKey.answerKey) as! [String]
         let properNouns = aDecoder.decodeObjectForKey(PropertyKey.properNounKey) as! [Tag]
         
         // Must call designated initializer.
         //self.init(dreamText: dreamText)
-        self.init(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding, isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answer1: answer1, answer2: answer2, answer3: answer3, properNouns: properNouns)
+        self.init(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding, isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answers: answers, properNouns: properNouns)
     }
     
     
@@ -55,9 +51,7 @@ class Dream: NSObject, NSCoding {
     var isRepeat: Bool
     var date: NSDate
     var tags: [Tag]
-    var answer1: String
-    var answer2: String
-    var answer3: String
+    var answers: [String]
     var properNouns: [Tag]
     
     struct PropertyKey {
@@ -69,14 +63,10 @@ class Dream: NSObject, NSCoding {
         static let repeatBoolKey = "repeatBool"
         static let dateKey = "dateKey"
         static let tagKey = "tagKey"
-        static let answer1Key = "answer1"
-        static let answer2Key = "answer2"
-        static let answer3Key = "answer3"
+        static let answerKey = "answer"
         static let properNounKey = "properNouns"
     }
-    
-    // TODO: Add title, tags, proper nouns, date, properties.... etc.
-    
+        
     // MARK: Initialization
     
     init? (dreamText: String) {
@@ -87,9 +77,7 @@ class Dream: NSObject, NSCoding {
         self.isRepeat = false
         self.date = NSDate()
         self.tags = [Tag]()
-        self.answer1 = ""
-        self.answer2 = ""
-        self.answer3 = ""
+        self.answers = ["", "", ""]
         self.properNouns = [Tag]()
         
         super.init()
@@ -98,7 +86,7 @@ class Dream: NSObject, NSCoding {
             return nil
         }
     }
-    init? (dreamText: String, dreamTitle: String, alternateEnding: String, isNightmare: Bool, isRepeat: Bool, date: NSDate, tags: [Tag], answer1: String, answer2: String, answer3: String, properNouns: [Tag]) {
+    init? (dreamText: String, dreamTitle: String, alternateEnding: String, isNightmare: Bool, isRepeat: Bool, date: NSDate, tags: [Tag], answers: [String], properNouns: [Tag]) {
         
         self.dreamText = dreamText
         self.dreamTitle = dreamTitle
@@ -107,9 +95,7 @@ class Dream: NSObject, NSCoding {
         self.isRepeat = isRepeat
         self.date = date
         self.tags = tags
-        self.answer1 = answer1
-        self.answer2 = answer2
-        self.answer3 = answer3
+        self.answers = answers
         self.properNouns = properNouns
         
         super.init()

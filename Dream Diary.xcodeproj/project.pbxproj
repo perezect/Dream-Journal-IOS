@@ -26,6 +26,8 @@
 		FD1A34EF1BEA893300AAA61C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
 		FD53F6E31BEC02C400588C99 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */; };
 		FD6202351BE9B09600130E96 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
+		FDC99D631BF3E9160076D3D2 /* ProperNounTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC99D621BF3E9160076D3D2 /* ProperNounTableViewController.swift */; };
+		FDC99D651BF3E9580076D3D2 /* ProperNounTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC99D641BF3E9580076D3D2 /* ProperNounTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		FD13CE0F1BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FD6202341BE9B09600130E96 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		FDC99D621BF3E9160076D3D2 /* ProperNounTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProperNounTableViewController.swift; sourceTree = "<group>"; };
+		FDC99D641BF3E9580076D3D2 /* ProperNounTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProperNounTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */,
 				FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */,
 				FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */,
+				FDC99D621BF3E9160076D3D2 /* ProperNounTableViewController.swift */,
+				FDC99D641BF3E9580076D3D2 /* ProperNounTableViewCell.swift */,
 				37518BF61BDDAAD4002EE7B1 /* TagTableViewController.swift */,
 				37518BF21BDD980B002EE7B1 /* TagTableViewCell.swift */,
 				48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */,
@@ -286,10 +292,12 @@
 				FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */,
 				37518BF71BDDAAD4002EE7B1 /* TagTableViewController.swift in Sources */,
 				37518BF31BDD980B002EE7B1 /* TagTableViewCell.swift in Sources */,
+				FDC99D651BF3E9580076D3D2 /* ProperNounTableViewCell.swift in Sources */,
 				48CA6CAD1BBCE58900F56158 /* DreamTableViewController.swift in Sources */,
 				48CA6CA71BBCE09200F56158 /* Dream.swift in Sources */,
 				48CA6CAA1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */,
 				FD53F6E31BEC02C400588C99 /* QuestionViewController.swift in Sources */,
+				FDC99D631BF3E9160076D3D2 /* ProperNounTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

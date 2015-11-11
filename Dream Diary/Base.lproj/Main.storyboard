@@ -159,6 +159,9 @@
                                                 <rect key="frame" x="113" y="0.0" width="95" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Proper Nouns"/>
+                                                <connections>
+                                                    <segue destination="Q2U-U6-1XV" kind="show" id="Yw1-BP-Cuu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <animations/>
@@ -324,7 +327,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOh-Zt-Ojq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ivh-bk-CuU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2739" y="933"/>
+            <point key="canvasLocation" x="2703" y="1251"/>
         </scene>
         <!--Choose Tags-->
         <scene sceneID="aa1-lv-OFj">
@@ -375,6 +378,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZX-sT-wfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3429" y="152"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="TcX-cq-Oaa">
+            <objects>
+                <tableViewController id="Q2U-U6-1XV" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EoD-9z-8TF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProperNounTableCell" id="6rq-yT-IGQ">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6rq-yT-IGQ" id="J9c-5E-jBh">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Q2U-U6-1XV" id="l4D-zP-Oyf"/>
+                            <outlet property="delegate" destination="Q2U-U6-1XV" id="Pf0-23-10u"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5x-sf-cJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3429" y="1251"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hg8-Uc-pWq">
@@ -431,7 +465,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZr-hl-J6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="933"/>
+            <point key="canvasLocation" x="1927" y="1251"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

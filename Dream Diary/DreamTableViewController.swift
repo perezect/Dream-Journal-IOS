@@ -127,6 +127,30 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
     {
         self.filteredDreams.removeAll(keepCapacity: false)
         
+        let searchText = searchController.searchBar.text!
+        var tagMatch = false
+
+        filteredDreams = dreams.filter({( Dream: Dream) -> Bool in
+            // Ignore capitalization
+            let options = NSStringCompareOptions.CaseInsensitiveSearch
+            
+            // Fix tags to figure out if this works
+            let filteredTags = Dream.tags.filter({(Tag: Tag) -> Bool in
+                let fTags = Tag.name.rangeOfString(searchText, options: options)
+                return fTags != nil
+            })
+            if( filteredTags.count != 0) {
+                tagMatch = true
+            }
+            
+            let textMatch = Dream.dreamText.rangeOfString(searchText, options: options) != nil
+            let titleMatch = Dream.dreamTitle.rangeOfString(searchText, options: options) != nil
+            let altMatch = Dream.alternateEnding.rangeOfString(searchText, options: options) != nil
+            return textMatch || titleMatch || altMatch || tagMatch
+            })
+/*
+        //let searchPredicate = NSPredicate(format: "dreamText CONTAINS[c] %@", searchController.searchBar.text!)
+
         let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
         
         
@@ -142,13 +166,15 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
         var dreamArray: [Dream] = []
         
         // Put the text back into as dreams
+        
         for var i = 0; i < array.count; ++i{
-            let filtDream = Dream(dreamText: array[i] as! String)
+            let filtDream = Dream(dreamText: array[i] as! String, dreamTitle: "A Bad Dream", alternateEnding: "", isNightmare: true, isRepeat: false, date: NSDate(), tags: [Tag](), answers: ["", "", ""], properNouns: [Tag]())
+
             dreamArray.append(filtDream!)
         }
         
         self.filteredDreams = dreamArray
-        
+*/
         // Reload the tableView with the filtered dreams
         self.tableView.reloadData()
     }

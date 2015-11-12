@@ -148,34 +148,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
             let altMatch = Dream.alternateEnding.rangeOfString(searchText, options: options) != nil
             return textMatch || titleMatch || altMatch || tagMatch
             })
-/*
-        //let searchPredicate = NSPredicate(format: "dreamText CONTAINS[c] %@", searchController.searchBar.text!)
-
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
         
-        
-        var textArray: [String] = []
-        
-        // Go through and get strings and put the text of each one in an array
-        for var i = 0; i < dreams.count; ++i{
-            textArray.append(dreams[i].dreamText)
-        }
-        
-        // Filter the array of strings to get dreams with the text you are looking for
-        let array = (textArray as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        var dreamArray: [Dream] = []
-        
-        // Put the text back into as dreams
-        
-        for var i = 0; i < array.count; ++i{
-            let filtDream = Dream(dreamText: array[i] as! String, dreamTitle: "A Bad Dream", alternateEnding: "", isNightmare: true, isRepeat: false, date: NSDate(), tags: [Tag](), answers: ["", "", ""], properNouns: [Tag]())
-
-            dreamArray.append(filtDream!)
-        }
-        
-        self.filteredDreams = dreamArray
-*/
-        // Reload the tableView with the filtered dreams
         self.tableView.reloadData()
     }
 

@@ -24,6 +24,7 @@
 		FD13CE031BAB2E0F0015D8C3 /* Dream_DiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE021BAB2E0F0015D8C3 /* Dream_DiaryTests.swift */; };
 		FD13CE0E1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */; };
 		FD1A34EF1BEA893300AAA61C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
+		FD2016C41BF9C49F00C98F0F /* en.txt in Resources */ = {isa = PBXBuildFile; fileRef = FD2016C31BF9C49F00C98F0F /* en.txt */; };
 		FD53F6E31BEC02C400588C99 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */; };
 		FD6202351BE9B09600130E96 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
 		FDC99D631BF3E9160076D3D2 /* ProperNounTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC99D621BF3E9160076D3D2 /* ProperNounTableViewController.swift */; };
@@ -66,6 +67,7 @@
 		FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dream DiaryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream_DiaryUITests.swift; sourceTree = "<group>"; };
 		FD13CE0F1BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD2016C31BF9C49F00C98F0F /* en.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = en.txt; sourceTree = "<group>"; };
 		FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FD6202341BE9B09600130E96 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		FDC99D621BF3E9160076D3D2 /* ProperNounTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProperNounTableViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		FD13CDEC1BAB2E0F0015D8C3 /* Dream Diary */ = {
 			isa = PBXGroup;
 			children = (
+				FD2016C31BF9C49F00C98F0F /* en.txt */,
 				FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */,
 				FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */,
 				FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */,
@@ -263,6 +266,7 @@
 				FD13CDF81BAB2E0F0015D8C3 /* LaunchScreen.storyboard in Resources */,
 				FD13CDF51BAB2E0F0015D8C3 /* Assets.xcassets in Resources */,
 				FD13CDF31BAB2E0F0015D8C3 /* Main.storyboard in Resources */,
+				FD2016C41BF9C49F00C98F0F /* en.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

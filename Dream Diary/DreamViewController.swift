@@ -44,10 +44,66 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         }
         // going to the question page
         else if segue.identifier == "AnswerQuestions" {
-            //let navVC = segue.destinationViewController as! UINavigationController
             let questionVC = segue.destinationViewController as! QuestionViewController
             questionVC.answers = answers
-            print("going to answer quesion page", answers)
+        }
+        // going to the proper nouns page
+        else if segue.identifier == "ShowProperNouns" {
+            let pNounVC = segue.destinationViewController as! ProperNounTableViewController
+            // try to extract proper nouns from the dream text
+            if properNouns.isEmpty && !dreamTextBox.text.isEmpty{
+                let dreamText = dreamTextBox.text
+                
+                let words = dreamText.componentsSeparatedByString(" ")
+                for word in words {
+                    if word[word.startIndex] >= "A" && word[word.startIndex] <= "Z" {
+                        properNouns.append(Tag(name: word)!)
+                    }
+                }
+            }
+            // remove duplicates
+            properNouns = uniq(properNouns)
+            // when uncommented, this loop loads a set of real words to compare against
+            /*let realWords = dictFromContentsOfFileWithName("en.txt")
+            for word in properNouns {
+                if ((realWords?[word.name.lowercaseString]) != nil) {
+                   properNouns = properNouns.filter( {$0 != word} )
+                }
+            }*/
+            print("proper nouns", properNouns)
+            
+            pNounVC.properNouns = properNouns
+        }
+    }
+    
+    // stackoverflow.com/questions/25738817/does-there-exist-within-swifts-api-an-easy-way-to-remove-duplicate-elements-fro
+    func uniq<S: SequenceType, E: Hashable where E==S.Generator.Element>(source: S) -> [E] {
+        var seen: [E:Bool] = [:]
+        return source.filter({ (v) -> Bool in
+            return seen.updateValue(true, forKey: v) == nil
+        })
+    }
+    
+    // stackoverflow.com/questions/24040141/how-do-i-load-a-text-file-into-an-array-with-swift
+    func dictFromContentsOfFileWithName(fileName: String) -> [String: Bool]? {
+        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: nil)
+        if path == nil {
+            return nil
+        }
+        
+        var fileContents: String? = nil
+        do {
+            fileContents = try String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
+            var dict = [String: Bool]()
+            let wordArray = fileContents?.componentsSeparatedByString("\n")
+            print("making dict")
+            for word in (wordArray)! {
+                dict[word] = true
+            }
+            print("made dict")
+            return dict
+        } catch _ as NSError {
+            return nil
         }
     }
 
@@ -89,6 +145,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             dreamTextBox.text = dream.dreamText
             tags = dream.tags
             date = dream.date
+            properNouns = dream.properNouns
             answers = dream.answers
         }
         
@@ -103,6 +160,11 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             } else {
                 loadSampleTags()
             }
+        }
+        
+        // look for nouns in the dream text if we aren't editing an existing dream
+        if (properNouns.isEmpty) {
+            
         }
         
         addPlaceholders()
@@ -235,6 +297,12 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     @IBAction func unwindFromTagPage(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? TagTableViewController {
             tags = sourceViewController.tags
+        }
+    }
+    
+    @IBAction func unwindFromNounPage(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? ProperNounTableViewController {
+            properNouns = sourceViewController.properNouns
         }
     }
 

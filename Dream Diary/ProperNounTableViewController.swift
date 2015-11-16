@@ -10,7 +10,7 @@ import UIKit
 
 class ProperNounTableViewController: UITableViewController {
 
-    var nouns = [Tag]()
+    var properNouns = [Tag]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +33,7 @@ class ProperNounTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nouns.count
+        return properNouns.count
     }
 
 
@@ -41,7 +41,7 @@ class ProperNounTableViewController: UITableViewController {
         let cellIdentifier = "ProperNounTableViewCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ProperNounTableViewCell
-        let noun = nouns[indexPath.row]
+        let noun = properNouns[indexPath.row]
         cell.selectionStyle = .None
         cell.nounLabel.text = noun.name
         
@@ -63,16 +63,16 @@ class ProperNounTableViewController: UITableViewController {
     {
         // Figure out if cell has been selected and set a checkmark if it is
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        let touchedTag = nouns[indexPath.row]
+        let touchedTag = properNouns[indexPath.row]
         
         if !touchedTag.selected {
             cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
-            nouns[indexPath.row].selected = true
+            properNouns[indexPath.row].selected = true
         }
             
         else{
             cell!.accessoryType = UITableViewCellAccessoryType.None
-            nouns[indexPath.row].selected = false
+            properNouns[indexPath.row].selected = false
         }
         cell!.selected = false
         
@@ -80,12 +80,12 @@ class ProperNounTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
     {
-        let touchedTag = nouns[indexPath.row]
+        let touchedTag = properNouns[indexPath.row]
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         // When cell deselected take away the checkmark
         if touchedTag.selected {
             cell!.accessoryType = UITableViewCellAccessoryType.None
-            nouns[indexPath.row].selected = false
+            properNouns[indexPath.row].selected = false
             cell!.selected = false
         }
     }
@@ -100,9 +100,12 @@ class ProperNounTableViewController: UITableViewController {
         
         let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             // Add a new tag to the tableview when you select okay
-            let newIndexPath = NSIndexPath(forRow: self.nouns.count, inSection: 0)
-            self.nouns.append(Tag(name: (inputTextField?.text)!)!)
-            self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            let newIndexPath = NSIndexPath(forRow: self.properNouns.count, inSection: 0)
+            if let tag = Tag(name: (inputTextField?.text)!) {
+                self.properNouns.append(tag)
+                self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+            
         })
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in }
         
@@ -111,6 +114,7 @@ class ProperNounTableViewController: UITableViewController {
         
         alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
             inputTextField = textField
+            inputTextField?.autocapitalizationType = UITextAutocapitalizationType.Sentences
         }
         
         presentViewController(alertController, animated: true, completion: nil)
@@ -128,7 +132,7 @@ class ProperNounTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            nouns.removeAtIndex(indexPath.row)
+            properNouns.removeAtIndex(indexPath.row)
             //saveTags()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {

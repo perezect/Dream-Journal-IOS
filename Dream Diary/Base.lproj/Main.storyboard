@@ -160,7 +160,7 @@
                                                 <animations/>
                                                 <state key="normal" title="Proper Nouns"/>
                                                 <connections>
-                                                    <segue destination="Q2U-U6-1XV" kind="show" identifier="ShowNouns" id="Yw1-BP-Cuu"/>
+                                                    <segue destination="Q2U-U6-1XV" kind="show" identifier="ShowProperNouns" id="Yw1-BP-Cuu"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -227,7 +227,7 @@
             </objects>
             <point key="canvasLocation" x="1927" y="152"/>
         </scene>
-        <!--Question View Controller-->
+        <!--Questions-->
         <scene sceneID="eiS-C4-ImH">
             <objects>
                 <viewController id="BeV-lh-LL2" customClass="QuestionViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
@@ -311,7 +311,7 @@
                             <constraint firstItem="j0u-Hx-7Dl" firstAttribute="top" secondItem="APA-h5-qtu" secondAttribute="bottom" constant="10" id="fp8-ak-VWX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fd3-O3-fOv">
+                    <navigationItem key="navigationItem" title="Questions" id="fd3-O3-fOv">
                         <barButtonItem key="leftBarButtonItem" systemItem="save" id="OH2-xy-FQ4">
                             <connections>
                                 <segue destination="Ivh-bk-CuU" kind="unwind" unwindAction="unwindFromQuestionPage:" id="ws8-yP-S9e"/>
@@ -385,17 +385,17 @@
             </objects>
             <point key="canvasLocation" x="2927" y="152"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Proper Nouns-->
         <scene sceneID="TcX-cq-Oaa">
             <objects>
-                <tableViewController id="Q2U-U6-1XV" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EoD-9z-8TF">
+                <tableViewController id="Q2U-U6-1XV" customClass="ProperNounTableViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="EoD-9z-8TF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProperNounTableCell" rowHeight="90" id="6rq-yT-IGQ" customClass="ProperNounTableViewCell" customModule="Dream_Diary" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProperNounTableViewCell" rowHeight="90" id="6rq-yT-IGQ" customClass="ProperNounTableViewCell" customModule="Dream_Diary" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6rq-yT-IGQ" id="J9c-5E-jBh">
@@ -423,8 +423,21 @@
                             <outlet property="delegate" destination="Q2U-U6-1XV" id="Pf0-23-10u"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Proper Nouns" id="gcg-Mi-UEY">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Dream" id="ssB-Re-6hO">
+                            <connections>
+                                <segue destination="Wn0-uP-xXt" kind="unwind" unwindAction="unwindFromNounPage:" id="T27-Up-E3X"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New Noun" id="18X-2J-9iP">
+                            <connections>
+                                <action selector="newTagAlert:" destination="Q2U-U6-1XV" id="xRf-UE-7lA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5x-sf-cJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Wn0-uP-xXt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3429" y="1251"/>
         </scene>

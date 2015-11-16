@@ -105,9 +105,12 @@ class TagTableViewController: UITableViewController {
         let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             // Add a new tag to the tableview when you select okay
             let newIndexPath = NSIndexPath(forRow: self.tags.count, inSection: 0)
-            self.tags.append(Tag(name: (inputTextField?.text)!)!)
-            self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
-            //self.saveTags()
+            if let tag = Tag(name: (inputTextField?.text)!) {
+                self.tags.append(tag)
+                self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+                //self.saveTags()
+            }
+            
         })
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in }
         

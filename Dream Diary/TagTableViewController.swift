@@ -10,26 +10,16 @@ import UIKit
 
 class TagTableViewController: UITableViewController {
     
-    //Mark Properties 
+    // Mark: Properties
     
     var tags = [Tag]()
-    //var lastSelectedIndexPath = NSIndexPath(forRow: -1, inSection: 0)
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //loadSampleTags()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
     }
-    
-    /*func loadSampleTags() {
-        let tag1 = Tag(name: "test tag")!
-        tags += [tag1]
-    }*/
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,7 +33,6 @@ class TagTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tags.count
     }
     
@@ -132,7 +121,6 @@ class TagTableViewController: UITableViewController {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
-    // TODO talk about UI and how to add edit, new tag and go back
     
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -174,22 +162,11 @@ class TagTableViewController: UITableViewController {
     // MARK: - Navigation
     
     // Go back to old view/
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dreamVC = segue.destinationViewController as! DreamViewController
-        dreamVC.tags = tags
-        print("called")
-        //if doneButton === sender {
-//            if let indexPaths = tableView.indexPathsForSelectedRows {
-//                for var i = 0; i < indexPaths.count; ++i {
-//                    
-//                    let thisPath = indexPaths[i] as NSIndexPath
-//                    let cell = tableView.cellForRowAtIndexPath(thisPath) as! TagTableViewCell
-//                    print(cell.tagLabel.text)
-//                }
-//            }
-
-        //}
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let dreamVC = segue.destinationViewController as! DreamViewController
+//        dreamVC.tags = tags
+//        print("called")
+//    }
     
     
     

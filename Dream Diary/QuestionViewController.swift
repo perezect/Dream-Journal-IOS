@@ -20,6 +20,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(answers)
 
         question1AnswerBox.delegate = self
         question2AnswerBox.delegate = self

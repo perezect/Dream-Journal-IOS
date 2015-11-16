@@ -160,7 +160,7 @@
                                                 <animations/>
                                                 <state key="normal" title="Proper Nouns"/>
                                                 <connections>
-                                                    <segue destination="Q2U-U6-1XV" kind="show" id="Yw1-BP-Cuu"/>
+                                                    <segue destination="Q2U-U6-1XV" kind="show" identifier="ShowNouns" id="Yw1-BP-Cuu"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -171,7 +171,7 @@
                                         <animations/>
                                         <state key="normal" title="Answer Questions"/>
                                         <connections>
-                                            <segue destination="zBB-pu-VHT" kind="show" identifier="AnswerQuestions" id="a60-po-il7"/>
+                                            <segue destination="BeV-lh-LL2" kind="show" identifier="AnswerQuestions" id="2zL-My-pmP"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-zY-WbQ">
@@ -312,9 +312,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fd3-O3-fOv">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Dream Info" id="OH2-xy-FQ4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="OH2-xy-FQ4">
                             <connections>
-                                <segue destination="Ivh-bk-CuU" kind="unwind" unwindAction="unwindFromQuestionPage:" id="dCI-de-gzq"/>
+                                <segue destination="Ivh-bk-CuU" kind="unwind" unwindAction="unwindFromQuestionPage:" id="ws8-yP-S9e"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -368,6 +368,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Choose Tags" id="RwY-db-YSl">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; New Dream" id="sIu-JR-j1a">
+                            <connections>
+                                <segue destination="IQc-ai-CC7" kind="unwind" unwindAction="unwindFromTagPage:" id="Zpg-Rh-I0W"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New Tag" id="C5Q-nN-83g">
                             <connections>
                                 <action selector="newTagAlert:" destination="8CF-4T-lXK" id="Xtv-JK-i7x"/>
@@ -376,8 +381,9 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZX-sT-wfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="IQc-ai-CC7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3429" y="152"/>
+            <point key="canvasLocation" x="2927" y="152"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="TcX-cq-Oaa">
@@ -389,15 +395,27 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProperNounTableCell" id="6rq-yT-IGQ">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProperNounTableCell" rowHeight="90" id="6rq-yT-IGQ" customClass="ProperNounTableViewCell" customModule="Dream_Diary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6rq-yT-IGQ" id="J9c-5E-jBh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4l-wZ-RrJ">
+                                            <rect key="frame" x="22" y="14" width="560" height="60"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="nounLabel" destination="o4l-wZ-RrJ" id="Kzc-Kz-6YI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -447,25 +465,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaS-Ci-SbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1155" y="680"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Cm5-f1-uow">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zBB-pu-VHT" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KQ2-qj-lgJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BeV-lh-LL2" kind="relationship" relationship="rootViewController" id="bhH-yy-17a"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NZr-hl-J6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1927" y="1251"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

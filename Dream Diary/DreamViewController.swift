@@ -44,9 +44,10 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         }
         // going to the question page
         else if segue.identifier == "AnswerQuestions" {
-            let navVC = segue.destinationViewController as! UINavigationController
-            let questionVC = navVC.topViewController as! QuestionViewController
+            //let navVC = segue.destinationViewController as! UINavigationController
+            let questionVC = segue.destinationViewController as! QuestionViewController
             questionVC.answers = answers
+            print("going to answer quesion page", answers)
         }
     }
 
@@ -228,7 +229,12 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     @IBAction func unwindFromQuestionPage(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? QuestionViewController {
             answers = sourceViewController.answers
-            print("answers", answers[0])
+        }
+    }
+    
+    @IBAction func unwindFromTagPage(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? TagTableViewController {
+            tags = sourceViewController.tags
         }
     }
 

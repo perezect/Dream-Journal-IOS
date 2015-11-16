@@ -10,6 +10,7 @@ import UIKit
 
 class ProperNounTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nounLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

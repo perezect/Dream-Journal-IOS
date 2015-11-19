@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DrawingViewController: UIViewController {
     
     var mostRecent:CGPoint!
     var isSwiping:Bool!
@@ -90,7 +90,10 @@ class ViewController: UIViewController {
     
     func image(image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafePointer<()>) {
         
-        UIAlertView(title: nil, message: "Image successfully saved to Photos library", delegate: nil, cancelButtonTitle: "Dismiss").show()
+        //UIAlertView(title: nil, message: "Image successfully saved to Photos library", delegate: nil, cancelButtonTitle: "Dismiss").show()
+        let alert = UIAlertController(title: "", message:"Image successfully saved to Photos library", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+        self.presentViewController(alert, animated: true){}
     }
 }
 

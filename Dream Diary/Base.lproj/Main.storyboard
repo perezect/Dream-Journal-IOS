@@ -166,14 +166,28 @@
                                         </subviews>
                                         <animations/>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHB-nd-IzC">
-                                        <rect key="frame" x="218" y="314" width="124" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bGH-pC-Uob">
+                                        <rect key="frame" x="151" y="314" width="259" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHB-nd-IzC">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Answer Questions"/>
+                                                <connections>
+                                                    <segue destination="BeV-lh-LL2" kind="show" identifier="AnswerQuestions" id="2zL-My-pmP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyh-Fn-3AS">
+                                                <rect key="frame" x="174" y="0.0" width="85" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Draw Dream"/>
+                                                <connections>
+                                                    <segue destination="sGM-R5-Lmq" kind="show" id="vdl-qT-H9F"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <animations/>
-                                        <state key="normal" title="Answer Questions"/>
-                                        <connections>
-                                            <segue destination="BeV-lh-LL2" kind="show" identifier="AnswerQuestions" id="2zL-My-pmP"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-zY-WbQ">
                                         <rect key="frame" x="160" y="354" width="240" height="50"/>
                                         <animations/>
@@ -385,6 +399,29 @@
                 <exit id="IQc-ai-CC7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2927" y="152"/>
+        </scene>
+        <!--Draw Dream-->
+        <scene sceneID="sf3-16-LYr">
+            <objects>
+                <viewController id="sGM-R5-Lmq" customClass="DrawingViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H9C-WS-oaH"/>
+                        <viewControllerLayoutGuide type="bottom" id="xPa-hW-8HP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WCy-93-Qlc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Draw Dream" id="pN9-Zu-WBF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5VO-9n-SDe"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fP5-0s-r5o"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDw-Ct-b9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3865" y="567"/>
         </scene>
         <!--Proper Nouns-->
         <scene sceneID="TcX-cq-Oaa">

@@ -11,111 +11,6 @@ import UIKit
 
 class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
-    // MARK: Navigation
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        
-        let isPresentingInAddDreamMode = presentingViewController is UINavigationController
-        
-        // Dismiss scene without saving anything
-        if isPresentingInAddDreamMode {
-            dismissViewControllerAnimated(true, completion: nil)
-        } else {
-            navigationController!.popViewControllerAnimated(true)
-        }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if saveButton === sender {
-            // retrieve all the information the user has entered
-            let dreamText = dreamTextBox.text ?? ""
-            let dreamTitle = dreamTitleBox.text ?? ""
-            let alternateEnding = alternateEndingTextBox.text ?? ""
-            let isNightmare = nightmareSwitch.on
-            let isRepeat = repeatSwitch.on
-            // create a dream object with all of the user's information
-            dream = Dream(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding,
-                isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answers: answers, properNouns: properNouns)
-            saveTags()
-        }
-        // going to the tag page
-        else if segue.identifier == "ShowTags" {
-            let tagViewController = segue.destinationViewController as! TagTableViewController
-            tagViewController.tags = tags
-        }
-        // going to the question page
-        else if segue.identifier == "AnswerQuestions" {
-            let questionVC = segue.destinationViewController as! QuestionViewController
-            questionVC.answers = answers
-        }
-        // going to the proper nouns page
-        else if segue.identifier == "ShowProperNouns" {
-            let pNounVC = segue.destinationViewController as! ProperNounTableViewController
-            // try to extract proper nouns from the dream text
-            if properNouns.isEmpty && !dreamTextBox.text.isEmpty{
-                var dreamText = dreamTextBox.text
-                print("dreamText", dreamText)
-                dreamText = dreamText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-                // convert text of dream to array of strings and also remove punctuation
-                let words = dreamText.componentsSeparatedByCharactersInSet(NSCharacterSet.punctuationCharacterSet()).joinWithSeparator("").componentsSeparatedByString(" ").filter{$0 != ""}
-                //
-                for word in words {
-                    if word[word.startIndex] >= "A" && word[word.startIndex] <= "Z" {
-                        properNouns.append(Tag(name: word)!)
-                    }
-                }
-            }
-            // remove duplicates
-            properNouns = uniq(properNouns)
-            for word in properNouns {
-                if (dictionaryWords.containsObject(word.name.lowercaseString)) {
-                   print("removing", word.name)
-                   properNouns = properNouns.filter( {$0 != word} )
-                }
-            }
-            print("proper nouns", properNouns)
-            
-            pNounVC.properNouns = properNouns
-        }
-    }
-    
-    // stackoverflow.com/questions/25738817/does-there-exist-within-swifts-api-an-easy-way-to-remove-duplicate-elements-fro
-    func uniq<S: SequenceType, E: Hashable where E==S.Generator.Element>(source: S) -> [E] {
-        var seen: [E:Bool] = [:]
-        return source.filter({ (v) -> Bool in
-            return seen.updateValue(true, forKey: v) == nil
-        })
-    }
-    
-    // stackoverflow.com/questions/24040141/how-do-i-load-a-text-file-into-an-array-with-swift
-    func dictFromContentsOfFileWithName(fileName: String) -> NSHashTable? {
-        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: nil)
-        if path == nil {
-            return nil
-        }
-        
-        var fileContents: String? = nil
-        do {
-            fileContents = try String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
-            print("got contents of file")
-            //var dict = [String: Bool]()
-            let wordArray = fileContents?.componentsSeparatedByString("\n")
-            let hashDict = NSHashTable(options: .CopyIn, capacity: (wordArray?.count)!)
-
-            print("making dict")
-            for word in wordArray! {
-                //dict[word] = true
-                hashDict.addObject(word)
-            }
-            print(hashDict.containsObject("andrew"))
-            print("made dict")
-            //return dict
-            return hashDict
-        } catch _ as NSError {
-            return nil
-        }
-    }
-
-    
     // MARK: Properties
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -132,7 +27,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     var properNouns: [Tag] = []
     var answers: [String] = ["", "", ""]
     let numDictWords = 34381
-    var dictionaryWords: NSHashTable = NSHashTable()//dictFromContentsOfFileWithName("en.txt")//NSHashTable(options: NSPointerFunctionsOptions.CopyIn, capacity: numDictWords)
+    var dictionaryWords: NSHashTable = NSHashTable()
     
     // Everything that happens when the view loads
     override func viewDidLoad() {
@@ -202,7 +97,6 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             alternateEndingTextBox.text = "Enter a new ending"
             alternateEndingTextBox.textColor = UIColor.lightGrayColor()
         }
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -225,6 +119,114 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         let tag1 = Tag(name: "Falling")!
         
         tags += [tag1]
+    }
+    
+    // MARK: Navigation
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        
+        let isPresentingInAddDreamMode = presentingViewController is UINavigationController
+        
+        // Dismiss scene without saving anything
+        if isPresentingInAddDreamMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveButton === sender {
+            // retrieve all the information the user has entered
+            let dreamText = dreamTextBox.text ?? ""
+            let dreamTitle = dreamTitleBox.text ?? ""
+            let alternateEnding = alternateEndingTextBox.text ?? ""
+            let isNightmare = nightmareSwitch.on
+            let isRepeat = repeatSwitch.on
+            // create a dream object with all of the user's information
+            dream = Dream(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding,
+                isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answers: answers, properNouns: properNouns)
+            saveTags()
+        }
+            // going to the tag page
+        else if segue.identifier == "ShowTags" {
+            let tagViewController = segue.destinationViewController as! TagTableViewController
+            tagViewController.tags = tags
+        }
+            // going to the question page
+        else if segue.identifier == "AnswerQuestions" {
+            let questionVC = segue.destinationViewController as! QuestionViewController
+            questionVC.answers = answers
+        }
+            // going to the proper nouns page
+        else if segue.identifier == "ShowProperNouns" {
+            let pNounVC = segue.destinationViewController as! ProperNounTableViewController
+            // try to extract proper nouns from the dream text
+            pNounVC.properNouns = getProperNouns()
+        }
+    }
+    
+    // gets proper nouns from the dream text
+    func getProperNouns() -> [Tag] {
+        if properNouns.isEmpty && !dreamTextBox.text.isEmpty{
+            var dreamText = dreamTextBox.text
+            print("dreamText", dreamText)
+            dreamText = dreamText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            // convert text of dream to array of strings and also remove punctuation
+            let words = dreamText.componentsSeparatedByCharactersInSet(NSCharacterSet.punctuationCharacterSet()).joinWithSeparator("").componentsSeparatedByString(" ").filter{$0 != ""}
+            //
+            for word in words {
+                if word[word.startIndex] >= "A" && word[word.startIndex] <= "Z" {
+                    properNouns.append(Tag(name: word)!)
+                }
+            }
+        }
+        // remove duplicates
+        properNouns = uniq(properNouns)
+        for word in properNouns {
+            if (dictionaryWords.containsObject(word.name.lowercaseString)) {
+                print("removing", word.name)
+                properNouns = properNouns.filter( {$0 != word} )
+            }
+        }
+        print("proper nouns", properNouns)
+        return properNouns
+    }
+    
+    // stackoverflow.com/questions/25738817/does-there-exist-within-swifts-api-an-easy-way-to-remove-duplicate-elements-fro
+    func uniq<S: SequenceType, E: Hashable where E==S.Generator.Element>(source: S) -> [E] {
+        var seen: [E:Bool] = [:]
+        return source.filter({ (v) -> Bool in
+            return seen.updateValue(true, forKey: v) == nil
+        })
+    }
+    
+    // stackoverflow.com/questions/24040141/how-do-i-load-a-text-file-into-an-array-with-swift
+    func dictFromContentsOfFileWithName(fileName: String) -> NSHashTable? {
+        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: nil)
+        if path == nil {
+            return nil
+        }
+        
+        var fileContents: String? = nil
+        do {
+            fileContents = try String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
+            print("got contents of file")
+            //var dict = [String: Bool]()
+            let wordArray = fileContents?.componentsSeparatedByString("\n")
+            let hashDict = NSHashTable(options: .CopyIn, capacity: (wordArray?.count)!)
+            
+            print("making dict")
+            for word in wordArray! {
+                //dict[word] = true
+                hashDict.addObject(word)
+            }
+            print(hashDict.containsObject("andrew"))
+            print("made dict")
+            //return dict
+            return hashDict
+        } catch _ as NSError {
+            return nil
+        }
     }
     
 
@@ -265,13 +267,6 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        // need if running on simulator without the iphone keyboard present
-        /*if let userInfo = notification.userInfo {
-            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                kbHeight = keyboardSize.height
-                print (kbHeight)
-            }
-        }*/
     }
     
     // Moves the view up or down so that the keyboard doesn't cover a text view

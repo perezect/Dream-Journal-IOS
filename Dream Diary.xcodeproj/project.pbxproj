@@ -16,6 +16,7 @@
 		48CA6CAA1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */; };
 		48CA6CAB1BBCE38F00F56158 /* DreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */; };
 		48CA6CAD1BBCE58900F56158 /* DreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */; };
+		48D1D59B1BFDAEFA006C28AC /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D1D59A1BFDAEFA006C28AC /* DrawingViewController.swift */; };
 		FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */; };
 		FD13CDF01BAB2E0F0015D8C3 /* DreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */; };
 		FD13CDF31BAB2E0F0015D8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		48CA6CA61BBCE09200F56158 /* Dream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
 		48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamTableViewCell.swift; sourceTree = "<group>"; };
 		48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamTableViewController.swift; sourceTree = "<group>"; };
+		48D1D59A1BFDAEFA006C28AC /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		FD13CDEA1BAB2E0F0015D8C3 /* Dream Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dream Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */,
 				FDC99D621BF3E9160076D3D2 /* ProperNounTableViewController.swift */,
 				FDC99D641BF3E9580076D3D2 /* ProperNounTableViewCell.swift */,
+				48D1D59A1BFDAEFA006C28AC /* DrawingViewController.swift */,
 				37518BF61BDDAAD4002EE7B1 /* TagTableViewController.swift */,
 				37518BF21BDD980B002EE7B1 /* TagTableViewCell.swift */,
 				48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */,
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6202351BE9B09600130E96 /* Tag.swift in Sources */,
+				48D1D59B1BFDAEFA006C28AC /* DrawingViewController.swift in Sources */,
 				FD13CDF01BAB2E0F0015D8C3 /* DreamViewController.swift in Sources */,
 				FD13CDEE1BAB2E0F0015D8C3 /* AppDelegate.swift in Sources */,
 				37518BF71BDDAAD4002EE7B1 /* TagTableViewController.swift in Sources */,

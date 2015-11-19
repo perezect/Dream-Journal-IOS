@@ -19,6 +19,8 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     @IBOutlet weak var repeatSwitch: UISwitch!
     @IBOutlet weak var dreamTextBox: UITextView!
     @IBOutlet weak var alternateEndingTextBox: UITextView!
+    @IBOutlet weak var stackView: UIStackView!
+    
     var kbHeight: CGFloat!              // keeps track of keyboard height
     var keyboardMoveHeight: CGFloat!    // keeps track of how far we need to move the view
     var dream: Dream?
@@ -37,6 +39,8 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         dreamTextBox.delegate = self
         dreamTitleBox.delegate = self
         alternateEndingTextBox.delegate = self
+        
+        //dreamTextBox.frame = CGRect(dreamTextBox.frame.origin
         
         // default to having the nightmare and repeat switches off
         nightmareSwitch.on = false
@@ -71,7 +75,9 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         addPlaceholders()
     
         // hide the new ending box if not a nightmare
-        alternateEndingTextBox.hidden = !nightmareSwitch.on
+        //alternateEndingTextBox.hidden = !nightmareSwitch.on
+        let alternateEndingDream = stackView.arrangedSubviews[stackView.arrangedSubviews.count - 1]
+        alternateEndingDream.hidden = !nightmareSwitch.on
     }
     
     // add placeholder text to the textview's if nothing is there
@@ -283,7 +289,9 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
     // updates whether the alternate ending box is shown whenever the user toggles the nightmare switch
     @IBAction func nightmareToggled(sender: UISwitch) {
-        alternateEndingTextBox.hidden = !sender.on      // TODO: find way to do this that doesn't give constraint issues
+        //alternateEndingTextBox.hidden = !sender.on      // TODO: find way to do this that doesn't give constraint issues
+        let alternateEndingDream = stackView.arrangedSubviews[stackView.arrangedSubviews.count - 1]
+        alternateEndingDream.hidden = !nightmareSwitch.on
     }
     
     @IBAction func unwindFromQuestionPage(sender: UIStoryboardSegue) {

@@ -220,6 +220,7 @@
                         <outlet property="nightmareSwitch" destination="OKZ-uK-IZ1" id="ffv-3n-oiX"/>
                         <outlet property="repeatSwitch" destination="JJe-KJ-Ydu" id="5qJ-pD-OWH"/>
                         <outlet property="saveButton" destination="hxk-Vf-fuG" id="dW5-D4-f7c"/>
+                        <outlet property="stackView" destination="Bau-Uq-EYB" id="Wxe-DI-csQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

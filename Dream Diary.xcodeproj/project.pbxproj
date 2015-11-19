@@ -30,6 +30,7 @@
 		FD6202351BE9B09600130E96 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6202341BE9B09600130E96 /* Tag.swift */; };
 		FDC99D631BF3E9160076D3D2 /* ProperNounTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC99D621BF3E9160076D3D2 /* ProperNounTableViewController.swift */; };
 		FDC99D651BF3E9580076D3D2 /* ProperNounTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC99D641BF3E9580076D3D2 /* ProperNounTableViewCell.swift */; };
+		FDE969C61BFDC56C00642206 /* ispell.words in Resources */ = {isa = PBXBuildFile; fileRef = FDE969C51BFDC56C00642206 /* ispell.words */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		FD6202341BE9B09600130E96 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		FDC99D621BF3E9160076D3D2 /* ProperNounTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProperNounTableViewController.swift; sourceTree = "<group>"; };
 		FDC99D641BF3E9580076D3D2 /* ProperNounTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProperNounTableViewCell.swift; sourceTree = "<group>"; };
+		FDE969C51BFDC56C00642206 /* ispell.words */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ispell.words; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				FD2016C31BF9C49F00C98F0F /* en.txt */,
 				FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */,
 				FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */,
+				FDE969C51BFDC56C00642206 /* ispell.words */,
 				FD53F6E21BEC02C400588C99 /* QuestionViewController.swift */,
 				FD13CDF11BAB2E0F0015D8C3 /* Main.storyboard */,
 				FDC99D621BF3E9160076D3D2 /* ProperNounTableViewController.swift */,
@@ -270,6 +273,7 @@
 				FD13CDF51BAB2E0F0015D8C3 /* Assets.xcassets in Resources */,
 				FD13CDF31BAB2E0F0015D8C3 /* Main.storyboard in Resources */,
 				FD2016C41BF9C49F00C98F0F /* en.txt in Resources */,
+				FDE969C61BFDC56C00642206 /* ispell.words in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

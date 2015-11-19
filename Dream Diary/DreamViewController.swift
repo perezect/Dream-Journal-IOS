@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     // MARK: Navigation
@@ -34,7 +35,6 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             // create a dream object with all of the user's information
             dream = Dream(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding,
                 isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answers: answers, properNouns: properNouns)
-            print (dream?.dreamTitle, dream?.dreamText)
             saveTags()
         }
         // going to the tag page
@@ -52,9 +52,12 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             let pNounVC = segue.destinationViewController as! ProperNounTableViewController
             // try to extract proper nouns from the dream text
             if properNouns.isEmpty && !dreamTextBox.text.isEmpty{
-                let dreamText = dreamTextBox.text
-                
-                let words = dreamText.componentsSeparatedByString(" ")
+                var dreamText = dreamTextBox.text
+                print("dreamText", dreamText)
+                dreamText = dreamText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                // convert text of dream to array of strings and also remove punctuation
+                let words = dreamText.componentsSeparatedByCharactersInSet(NSCharacterSet.punctuationCharacterSet()).joinWithSeparator("").componentsSeparatedByString(" ").filter{$0 != ""}
+                //
                 for word in words {
                     if word[word.startIndex] >= "A" && word[word.startIndex] <= "Z" {
                         properNouns.append(Tag(name: word)!)
@@ -63,13 +66,12 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             }
             // remove duplicates
             properNouns = uniq(properNouns)
-            // when uncommented, this loop loads a set of real words to compare against
-            /*let realWords = dictFromContentsOfFileWithName("en.txt")
             for word in properNouns {
-                if ((realWords?[word.name.lowercaseString]) != nil) {
+                if (dictionaryWords.containsObject(word.name.lowercaseString)) {
+                   print("removing", word.name)
                    properNouns = properNouns.filter( {$0 != word} )
                 }
-            }*/
+            }
             print("proper nouns", properNouns)
             
             pNounVC.properNouns = properNouns
@@ -85,7 +87,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     }
     
     // stackoverflow.com/questions/24040141/how-do-i-load-a-text-file-into-an-array-with-swift
-    func dictFromContentsOfFileWithName(fileName: String) -> [String: Bool]? {
+    func dictFromContentsOfFileWithName(fileName: String) -> NSHashTable? {
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: nil)
         if path == nil {
             return nil
@@ -94,14 +96,20 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         var fileContents: String? = nil
         do {
             fileContents = try String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
-            var dict = [String: Bool]()
+            print("got contents of file")
+            //var dict = [String: Bool]()
             let wordArray = fileContents?.componentsSeparatedByString("\n")
+            let hashDict = NSHashTable(options: .CopyIn, capacity: (wordArray?.count)!)
+
             print("making dict")
-            for word in (wordArray)! {
-                dict[word] = true
+            for word in wordArray! {
+                //dict[word] = true
+                hashDict.addObject(word)
             }
+            print(hashDict.containsObject("andrew"))
             print("made dict")
-            return dict
+            //return dict
+            return hashDict
         } catch _ as NSError {
             return nil
         }
@@ -123,6 +131,8 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     var date: NSDate = NSDate()
     var properNouns: [Tag] = []
     var answers: [String] = ["", "", ""]
+    let numDictWords = 34381
+    var dictionaryWords: NSHashTable = NSHashTable()//dictFromContentsOfFileWithName("en.txt")//NSHashTable(options: NSPointerFunctionsOptions.CopyIn, capacity: numDictWords)
     
     // Everything that happens when the view loads
     override func viewDidLoad() {
@@ -161,17 +171,12 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
                 loadSampleTags()
             }
         }
-        
-        // look for nouns in the dream text if we aren't editing an existing dream
-        if (properNouns.isEmpty) {
-            
-        }
+        dictionaryWords = dictFromContentsOfFileWithName("ispell.words")!
         
         addPlaceholders()
     
         // hide the new ending box if not a nightmare
         alternateEndingTextBox.hidden = !nightmareSwitch.on
-        print("answers", answers[0])
     }
     
     // add placeholder text to the textview's if nothing is there
@@ -240,7 +245,6 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
-        print("added notification")
     }
     
     // get rid of keyboard notifications when leaving
@@ -256,7 +260,6 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         if let userInfo = notification.userInfo {
             if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
                 kbHeight = keyboardSize.height
-                print (kbHeight)
             }
         }
     }

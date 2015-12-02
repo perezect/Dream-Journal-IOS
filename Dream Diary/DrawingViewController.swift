@@ -17,7 +17,7 @@ class DrawingViewController: UIViewController {
     var green:CGFloat!
     var blue:CGFloat!
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBAction func saveImage(sender: AnyObject) {
         
         UIImageWriteToSavedPhotosAlbum(self.imageView.image!,self, Selector("image:withPotentialError:contextInfo:"), nil)
@@ -56,7 +56,9 @@ class DrawingViewController: UIViewController {
         isSwiping = true;
         if let touch = touching.first{
             let currentPoint = touch.locationInView(imageView)
+            
             UIGraphicsBeginImageContext(self.imageView.frame.size)
+            
             self.imageView.image?.drawInRect(CGRectMake(0, 0, self.imageView.frame.size.width, self.imageView.frame.size.height))
             
             CGContextMoveToPoint(UIGraphicsGetCurrentContext(), mostRecent.x, mostRecent.y)

@@ -30,6 +30,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
     var answers: [String] = ["", "", ""]
     let numDictWords = 34381
     var dictionaryWords: NSHashTable = NSHashTable()
+    var drawing: UIImage = UIImage()
     
     // Everything that happens when the view loads
     override func viewDidLoad() {
@@ -56,6 +57,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             date = dream.date
             properNouns = dream.properNouns
             answers = dream.answers
+            drawing = dream.drawing
         }
         
         // load tags if we aren't editing an existing dream
@@ -150,7 +152,7 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             let isRepeat = repeatSwitch.on
             // create a dream object with all of the user's information
             dream = Dream(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding,
-                isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answers: answers, properNouns: properNouns)
+                isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answers: answers, properNouns: properNouns, drawing: drawing)
             saveTags()
         }
             // going to the tag page
@@ -168,6 +170,11 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
             let pNounVC = segue.destinationViewController as! ProperNounTableViewController
             // try to extract proper nouns from the dream text
             pNounVC.properNouns = getProperNouns()
+        }
+        // going to the draw dream page
+        else if segue.identifier == "DrawDream" {
+            let dVC = segue.destinationViewController as! DrawingViewController
+            dVC.drawing = drawing
         }
     }
     
@@ -310,6 +317,16 @@ class DreamViewController: UIViewController, UITextViewDelegate, UITextFieldDele
         if let sourceViewController = sender.sourceViewController as? ProperNounTableViewController {
             properNouns = sourceViewController.properNouns
         }
+    }
+    
+    @IBAction func unwindFromDrawingPage(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? DrawingViewController {
+            drawing = sourceViewController.drawing
+        }
+    }
+    
+    @IBAction func unwindNoSave(sender: UIStoryboardSegue) {
+        
     }
 
     

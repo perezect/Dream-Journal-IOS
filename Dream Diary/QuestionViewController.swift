@@ -98,20 +98,12 @@ class QuestionViewController: UIViewController, UITextViewDelegate {
     {
         if text == "\n" {
             textView.resignFirstResponder()
-            //question1AnswerBox.resignFirstResponder()
-            //question2AnswerBox.resignFirstResponder()
-            //question3AnswerBox.resignFirstResponder()
             return false
         }
         return true
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
-        // if there is placeholder text, remove it
-//        if textView.textColor == UIColor.lightGrayColor() {
-//            textView.text = nil
-//            textView.textColor = UIColor.blackColor()
-//        }
         // calculate the amount to move the view by so the keyboard doesn't cover the textView
         let txtY = textView.frame.origin.y
         let textH = textView.frame.height
@@ -124,14 +116,6 @@ class QuestionViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidEndEditing(textView: UITextView) {
-        // put back placeholder text if nothing is in the textView
-//        if textView == dreamTextBox && textView.text.isEmpty {
-//            textView.text = "Enter the dream"
-//            textView.textColor = UIColor.lightGrayColor()
-//        } else if textView == alternateEndingTextBox && textView.text.isEmpty {
-//            textView.text = "Enter a new ending"
-//            textView.textColor = UIColor.lightGrayColor()
-//        }
         if textView != question1AnswerBox {
             self.animateTextField(false)
         }

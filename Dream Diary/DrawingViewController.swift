@@ -16,17 +16,25 @@ class DrawingViewController: UIViewController {
     var red:CGFloat!
     var green:CGFloat!
     var blue:CGFloat!
+    var drawing: UIImage!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func saveImage(sender: AnyObject) {
         
-        UIImageWriteToSavedPhotosAlbum(self.imageView.image!,self, Selector("image:withPotentialError:contextInfo:"), nil)
+        //UIImageWriteToSavedPhotosAlbum(self.imageView.image!,self, Selector("image:withPotentialError:contextInfo:"), nil)
+        
         
     }
     @IBAction func undoDrawing(sender: AnyObject) {
         
         self.imageView.image = nil
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        drawing = self.imageView.image!
+        //let dreamVC = segue.destinationViewController as! DreamViewController
+        //dreamVC.drawing = self.imageView.image!
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +43,9 @@ class DrawingViewController: UIViewController {
         red   = (0.0/255.0)
         green = (0.0/255.0)
         blue  = (0.0/255.0)
+        
+        imageView.image = drawing
+        print("loaded image")
     }
     
     override func didReceiveMemoryWarning() {

@@ -69,11 +69,11 @@ class DrawingViewController: UIViewController {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         swiped = false
         let touch = touches.first! as UITouch
-        lastPoint = touch.locationInView(self.view)
+        lastPoint = touch.locationInView(self.mainImageView)
     }
     
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
-        
+        let view = self.mainImageView
         // 1
         UIGraphicsBeginImageContext(view.frame.size)
         let context = UIGraphicsGetCurrentContext()
@@ -103,7 +103,7 @@ class DrawingViewController: UIViewController {
         // 6
         swiped = true
         let touch = touches.first! as UITouch
-        let currentPoint = touch.locationInView(view)
+        let currentPoint = touch.locationInView(self.mainImageView)
         drawLineFrom(lastPoint, toPoint: currentPoint)
         
         // 7
@@ -112,6 +112,7 @@ class DrawingViewController: UIViewController {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
+        let view = self.mainImageView
         if !swiped {
             // draw a single point
             drawLineFrom(lastPoint, toPoint: lastPoint)

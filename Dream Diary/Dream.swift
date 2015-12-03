@@ -35,11 +35,11 @@ class Dream: NSObject, NSCoding {
         let tags = aDecoder.decodeObjectForKey(PropertyKey.tagKey) as! [Tag]
         let answers = aDecoder.decodeObjectForKey(PropertyKey.answerKey) as! [String]
         let properNouns = aDecoder.decodeObjectForKey(PropertyKey.properNounKey) as! [Tag]
-        let drawing = aDecoder.decodeObjectForKey(PropertyKey.drawingKey) as! UIImage?
+        let drawing = aDecoder.decodeObjectForKey(PropertyKey.drawingKey) as! UIImage
         
         // Must call designated initializer.
         //self.init(dreamText: dreamText)
-        self.init(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding, isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answers: answers, properNouns: properNouns, drawing: drawing!)
+        self.init(dreamText: dreamText, dreamTitle: dreamTitle, alternateEnding: alternateEnding, isNightmare: isNightmare, isRepeat: isRepeat, date: date, tags: tags, answers: answers, properNouns: properNouns, drawing: drawing)
     }
     
     
@@ -55,7 +55,7 @@ class Dream: NSObject, NSCoding {
     var tags: [Tag]
     var answers: [String]
     var properNouns: [Tag]
-    var drawing: UIImage!
+    var drawing: UIImage
     
     struct PropertyKey {
         

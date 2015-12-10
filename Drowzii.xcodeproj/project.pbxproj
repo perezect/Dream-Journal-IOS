@@ -57,17 +57,17 @@
 		48CA6CA91BBCE38F00F56158 /* DreamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamTableViewCell.swift; sourceTree = "<group>"; };
 		48CA6CAC1BBCE58900F56158 /* DreamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamTableViewController.swift; sourceTree = "<group>"; };
 		48D1D59A1BFDAEFA006C28AC /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
-		FD13CDEA1BAB2E0F0015D8C3 /* Dream Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dream Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD13CDEA1BAB2E0F0015D8C3 /* Drowzii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drowzii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD13CDED1BAB2E0F0015D8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD13CDEF1BAB2E0F0015D8C3 /* DreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewController.swift; sourceTree = "<group>"; };
 		FD13CDF21BAB2E0F0015D8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD13CDF41BAB2E0F0015D8C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD13CDF71BAB2E0F0015D8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD13CDF91BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD13CDFE1BAB2E0F0015D8C3 /* Dream DiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dream DiaryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD13CDFE1BAB2E0F0015D8C3 /* Drowzii.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Drowzii.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD13CE021BAB2E0F0015D8C3 /* Dream_DiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream_DiaryTests.swift; sourceTree = "<group>"; };
 		FD13CE041BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dream DiaryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD13CE091BAB2E0F0015D8C3 /* Drowzii.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Drowzii.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD13CE0D1BAB2E0F0015D8C3 /* Dream_DiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream_DiaryUITests.swift; sourceTree = "<group>"; };
 		FD13CE0F1BAB2E0F0015D8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD2016C31BF9C49F00C98F0F /* en.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = en.txt; sourceTree = "<group>"; };
@@ -116,9 +116,9 @@
 		FD13CDEB1BAB2E0F0015D8C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD13CDEA1BAB2E0F0015D8C3 /* Dream Diary.app */,
-				FD13CDFE1BAB2E0F0015D8C3 /* Dream DiaryTests.xctest */,
-				FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */,
+				FD13CDEA1BAB2E0F0015D8C3 /* Drowzii.app */,
+				FD13CDFE1BAB2E0F0015D8C3 /* Drowzii.xctest */,
+				FD13CE091BAB2E0F0015D8C3 /* Drowzii.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,9 +169,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FD13CDE91BAB2E0F0015D8C3 /* Dream Diary */ = {
+		FD13CDE91BAB2E0F0015D8C3 /* Drowzii */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD13CE121BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream Diary" */;
+			buildConfigurationList = FD13CE121BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Drowzii" */;
 			buildPhases = (
 				FD13CDE61BAB2E0F0015D8C3 /* Sources */,
 				FD13CDE71BAB2E0F0015D8C3 /* Frameworks */,
@@ -181,14 +181,14 @@
 			);
 			dependencies = (
 			);
-			name = "Dream Diary";
+			name = Drowzii;
 			productName = "Dream Diary";
-			productReference = FD13CDEA1BAB2E0F0015D8C3 /* Dream Diary.app */;
+			productReference = FD13CDEA1BAB2E0F0015D8C3 /* Drowzii.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FD13CDFD1BAB2E0F0015D8C3 /* Dream DiaryTests */ = {
+		FD13CDFD1BAB2E0F0015D8C3 /* DrowziiTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD13CE151BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryTests" */;
+			buildConfigurationList = FD13CE151BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "DrowziiTests" */;
 			buildPhases = (
 				FD13CDFA1BAB2E0F0015D8C3 /* Sources */,
 				FD13CDFB1BAB2E0F0015D8C3 /* Frameworks */,
@@ -199,14 +199,14 @@
 			dependencies = (
 				FD13CE001BAB2E0F0015D8C3 /* PBXTargetDependency */,
 			);
-			name = "Dream DiaryTests";
+			name = DrowziiTests;
 			productName = "Dream DiaryTests";
-			productReference = FD13CDFE1BAB2E0F0015D8C3 /* Dream DiaryTests.xctest */;
+			productReference = FD13CDFE1BAB2E0F0015D8C3 /* Drowzii.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FD13CE081BAB2E0F0015D8C3 /* Dream DiaryUITests */ = {
+		FD13CE081BAB2E0F0015D8C3 /* DrowziiUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD13CE181BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryUITests" */;
+			buildConfigurationList = FD13CE181BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "DrowziiUITests" */;
 			buildPhases = (
 				FD13CE051BAB2E0F0015D8C3 /* Sources */,
 				FD13CE061BAB2E0F0015D8C3 /* Frameworks */,
@@ -217,9 +217,9 @@
 			dependencies = (
 				FD13CE0B1BAB2E0F0015D8C3 /* PBXTargetDependency */,
 			);
-			name = "Dream DiaryUITests";
+			name = DrowziiUITests;
 			productName = "Dream DiaryUITests";
-			productReference = FD13CE091BAB2E0F0015D8C3 /* Dream DiaryUITests.xctest */;
+			productReference = FD13CE091BAB2E0F0015D8C3 /* Drowzii.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -232,7 +232,7 @@
 				TargetAttributes = {
 					FD13CDE91BAB2E0F0015D8C3 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = M5K6KMMA2L;
+						DevelopmentTeam = HT984Y29RZ;
 					};
 					FD13CDFD1BAB2E0F0015D8C3 = {
 						CreatedOnToolsVersion = 7.0;
@@ -244,7 +244,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FD13CDE51BAB2E0F0015D8C3 /* Build configuration list for PBXProject "Dream Diary" */;
+			buildConfigurationList = FD13CDE51BAB2E0F0015D8C3 /* Build configuration list for PBXProject "Drowzii" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -257,9 +257,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FD13CDE91BAB2E0F0015D8C3 /* Dream Diary */,
-				FD13CDFD1BAB2E0F0015D8C3 /* Dream DiaryTests */,
-				FD13CE081BAB2E0F0015D8C3 /* Dream DiaryUITests */,
+				FD13CDE91BAB2E0F0015D8C3 /* Drowzii */,
+				FD13CDFD1BAB2E0F0015D8C3 /* DrowziiTests */,
+				FD13CE081BAB2E0F0015D8C3 /* DrowziiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,12 +339,12 @@
 /* Begin PBXTargetDependency section */
 		FD13CE001BAB2E0F0015D8C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FD13CDE91BAB2E0F0015D8C3 /* Dream Diary */;
+			target = FD13CDE91BAB2E0F0015D8C3 /* Drowzii */;
 			targetProxy = FD13CDFF1BAB2E0F0015D8C3 /* PBXContainerItemProxy */;
 		};
 		FD13CE0B1BAB2E0F0015D8C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FD13CDE91BAB2E0F0015D8C3 /* Dream Diary */;
+			target = FD13CDE91BAB2E0F0015D8C3 /* Drowzii */;
 			targetProxy = FD13CE0A1BAB2E0F0015D8C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -460,8 +460,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Dream Diary/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-Diary";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ascott.Drowzii;
+				PRODUCT_NAME = Drowzii;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -474,8 +474,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Dream Diary/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-Diary";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ascott.Drowzii;
+				PRODUCT_NAME = Drowzii;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -487,8 +487,8 @@
 				INFOPLIST_FILE = "Dream DiaryTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-DiaryTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dream Diary.app/Dream Diary";
+				PRODUCT_NAME = Drowzii;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drowzii.app/Drowzii";
 			};
 			name = Debug;
 		};
@@ -499,8 +499,8 @@
 				INFOPLIST_FILE = "Dream DiaryTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-DiaryTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dream Diary.app/Dream Diary";
+				PRODUCT_NAME = Drowzii;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drowzii.app/Drowzii";
 			};
 			name = Release;
 		};
@@ -510,7 +510,7 @@
 				INFOPLIST_FILE = "Dream DiaryUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-DiaryUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Drowzii;
 				TEST_TARGET_NAME = "Dream Diary";
 				USES_XCTRUNNER = YES;
 			};
@@ -522,7 +522,7 @@
 				INFOPLIST_FILE = "Dream DiaryUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ascott.Dream-DiaryUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Drowzii;
 				TEST_TARGET_NAME = "Dream Diary";
 				USES_XCTRUNNER = YES;
 			};
@@ -531,7 +531,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FD13CDE51BAB2E0F0015D8C3 /* Build configuration list for PBXProject "Dream Diary" */ = {
+		FD13CDE51BAB2E0F0015D8C3 /* Build configuration list for PBXProject "Drowzii" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD13CE101BAB2E0F0015D8C3 /* Debug */,
@@ -540,7 +540,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD13CE121BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream Diary" */ = {
+		FD13CE121BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Drowzii" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD13CE131BAB2E0F0015D8C3 /* Debug */,
@@ -549,7 +549,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD13CE151BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryTests" */ = {
+		FD13CE151BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "DrowziiTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD13CE161BAB2E0F0015D8C3 /* Debug */,
@@ -558,7 +558,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD13CE181BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "Dream DiaryUITests" */ = {
+		FD13CE181BAB2E0F0015D8C3 /* Build configuration list for PBXNativeTarget "DrowziiUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD13CE191BAB2E0F0015D8C3 /* Debug */,

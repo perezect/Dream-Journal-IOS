@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FD13CDE91BAB2E0F0015D8C3"
-               BuildableName = "Dream Diary.app"
-               BlueprintName = "Dream Diary"
-               ReferencedContainer = "container:Dream Diary.xcodeproj">
+               BuildableName = "Drowzii.app"
+               BlueprintName = "Drowzii"
+               ReferencedContainer = "container:Drowzii.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FD13CDFD1BAB2E0F0015D8C3"
-               BuildableName = "Dream DiaryTests.xctest"
-               BlueprintName = "Dream DiaryTests"
-               ReferencedContainer = "container:Dream Diary.xcodeproj">
+               BuildableName = "Drowzii.xctest"
+               BlueprintName = "DrowziiTests"
+               ReferencedContainer = "container:Drowzii.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FD13CE081BAB2E0F0015D8C3"
-               BuildableName = "Dream DiaryUITests.xctest"
-               BlueprintName = "Dream DiaryUITests"
-               ReferencedContainer = "container:Dream Diary.xcodeproj">
+               BuildableName = "Drowzii.xctest"
+               BlueprintName = "DrowziiUITests"
+               ReferencedContainer = "container:Drowzii.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FD13CDE91BAB2E0F0015D8C3"
-            BuildableName = "Dream Diary.app"
-            BlueprintName = "Dream Diary"
-            ReferencedContainer = "container:Dream Diary.xcodeproj">
+            BuildableName = "Drowzii.app"
+            BlueprintName = "Drowzii"
+            ReferencedContainer = "container:Drowzii.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FD13CDE91BAB2E0F0015D8C3"
-            BuildableName = "Dream Diary.app"
-            BlueprintName = "Dream Diary"
-            ReferencedContainer = "container:Dream Diary.xcodeproj">
+            BuildableName = "Drowzii.app"
+            BlueprintName = "Drowzii"
+            ReferencedContainer = "container:Drowzii.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FD13CDE91BAB2E0F0015D8C3"
-            BuildableName = "Dream Diary.app"
-            BlueprintName = "Dream Diary"
-            ReferencedContainer = "container:Dream Diary.xcodeproj">
+            BuildableName = "Drowzii.app"
+            BlueprintName = "Drowzii"
+            ReferencedContainer = "container:Drowzii.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

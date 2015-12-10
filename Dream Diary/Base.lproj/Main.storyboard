@@ -1,68 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVl-ix-8me">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cVl-ix-8me">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Saved Dreams-->
         <scene sceneID="Kje-Pq-5Bs">
             <objects>
-                <tableViewController id="w0j-u4-vvg" customClass="DreamTableViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="w0j-u4-vvg" customClass="DreamTableViewController" customModule="Drowzii" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Ev-d5-sD6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DreamTableViewCell" rowHeight="90" id="msY-6Z-Wa8" customClass="DreamTableViewCell" customModule="Dream_Diary" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DreamTableViewCell" rowHeight="90" id="msY-6Z-Wa8" customClass="DreamTableViewCell" customModule="Drowzii" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="msY-6Z-Wa8" id="HU2-ya-pnZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNN-1i-ml8">
-                                            <rect key="frame" x="111" y="8" width="299" height="73"/>
-                                            <animations/>
+                                            <rect key="frame" x="86" y="8" width="428" height="73"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w7v-SG-Clo" userLabel="Dream Image View">
-                                            <rect key="frame" x="8" y="8" width="101" height="73"/>
+                                            <rect key="frame" x="8" y="8" width="75" height="75"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="101" id="poa-5h-lNf"/>
+                                                <constraint firstAttribute="width" constant="75" id="aFZ-Cj-iKl"/>
+                                                <constraint firstAttribute="height" constant="75" id="ssr-0W-LCC"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1K-zi-kcp">
-                                            <rect key="frame" x="444" y="8" width="148" height="73"/>
-                                            <animations/>
+                                            <rect key="frame" x="517" y="8" width="75" height="73"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="148" id="wNK-0g-aRf"/>
+                                                <constraint firstAttribute="width" constant="75" id="erN-o7-aaJ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
-                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="top" secondItem="w7v-SG-Clo" secondAttribute="top" id="DlR-hO-VDL"/>
-                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="leading" secondItem="YNN-1i-ml8" secondAttribute="trailing" constant="34" id="Mx4-hm-EZ3"/>
-                                        <constraint firstItem="w7v-SG-Clo" firstAttribute="leading" secondItem="HU2-ya-pnZ" secondAttribute="leadingMargin" id="RQh-ZY-psc"/>
-                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="bottom" secondItem="w7v-SG-Clo" secondAttribute="bottom" id="SfB-iI-t1p"/>
-                                        <constraint firstItem="YNN-1i-ml8" firstAttribute="leading" secondItem="w7v-SG-Clo" secondAttribute="trailing" constant="2" id="Srk-6g-j45"/>
-                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="bottom" secondItem="YNN-1i-ml8" secondAttribute="bottom" id="Ts9-YQ-0KC"/>
-                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="top" secondItem="YNN-1i-ml8" secondAttribute="top" id="U8Q-Z5-He8"/>
-                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="centerY" secondItem="HU2-ya-pnZ" secondAttribute="centerY" id="jdv-8h-Ole"/>
-                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="top" secondItem="HU2-ya-pnZ" secondAttribute="topMargin" id="nlT-Bo-QZu"/>
-                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="trailing" secondItem="HU2-ya-pnZ" secondAttribute="trailingMargin" id="sgQ-4F-jOX"/>
+                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="trailing" secondItem="HU2-ya-pnZ" secondAttribute="trailingMargin" id="1am-yX-AGN"/>
+                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="bottom" secondItem="HU2-ya-pnZ" secondAttribute="bottomMargin" id="3tQ-jU-H2t"/>
+                                        <constraint firstItem="YNN-1i-ml8" firstAttribute="top" secondItem="HU2-ya-pnZ" secondAttribute="topMargin" id="7q7-EY-fuA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="YNN-1i-ml8" secondAttribute="bottom" id="LQ9-xL-HKl"/>
+                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="leading" secondItem="YNN-1i-ml8" secondAttribute="trailing" constant="3" id="NOP-K8-ubW"/>
+                                        <constraint firstItem="j1K-zi-kcp" firstAttribute="top" secondItem="HU2-ya-pnZ" secondAttribute="topMargin" id="RLw-OZ-Emt"/>
+                                        <constraint firstItem="YNN-1i-ml8" firstAttribute="leading" secondItem="w7v-SG-Clo" secondAttribute="trailing" constant="3" id="lKX-UK-7Ze"/>
+                                        <constraint firstItem="w7v-SG-Clo" firstAttribute="leading" secondItem="HU2-ya-pnZ" secondAttribute="leadingMargin" id="m5v-35-6xS"/>
+                                        <constraint firstItem="w7v-SG-Clo" firstAttribute="top" secondItem="HU2-ya-pnZ" secondAttribute="topMargin" id="qgp-Q3-1lD"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dreamDateLabel" destination="j1K-zi-kcp" id="IFi-vn-Gm6"/>
@@ -103,7 +98,7 @@
         <!--New Dream-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DreamViewController" customModule="Dream_Diary" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DreamViewController" customModule="Drowzii" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -117,7 +112,6 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dream Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjW-EM-c0s">
                                         <rect key="frame" x="232" y="0.0" width="96" height="30"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
@@ -126,7 +120,6 @@
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKZ-uK-IZ1">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                <animations/>
                                                 <color key="onTintColor" red="0.94908807618351154" green="0.94571132541425784" blue="0.12035323331770106" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <action selector="nightmareToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="PZI-8N-RHf"/>
@@ -134,35 +127,29 @@
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nightmare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3v-5D-BrK">
                                                 <rect key="frame" x="99" y="0.0" width="81" height="31"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.98176147970730721" blue="0.40725250268144231" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="e8G-lW-YhZ">
                                         <rect key="frame" x="190" y="81" width="180" height="31"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJe-KJ-Ydu">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
-                                                <animations/>
                                                 <color key="onTintColor" red="0.94908807618351154" green="0.94571132541425784" blue="0.12035323331770106" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5o-bK-KKp">
                                                 <rect key="frame" x="99" y="0.0" width="81" height="31"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bab-ZQ-jM6">
                                         <rect key="frame" x="160" y="122" width="240" height="142"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -176,7 +163,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rir-iE-cbC">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="0.71999999999999997" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="  Tags  ">
                                                     <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -192,7 +178,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-Ke-J7O">
                                                 <rect key="frame" x="129" y="0.0" width="111" height="30"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="0.71999999999999997" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="  Proper Nouns  ">
                                                     <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -207,14 +192,12 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bGH-pC-Uob">
                                         <rect key="frame" x="135" y="314" width="291" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHB-nd-IzC">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="0.71999999999999997" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="  Answer Questions  ">
                                                     <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -230,7 +213,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyh-Fn-3AS">
                                                 <rect key="frame" x="190" y="0.0" width="101" height="30"/>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="0.71999999999999997" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="  Draw Dream  ">
                                                     <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -245,11 +227,9 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-zY-WbQ">
                                         <rect key="frame" x="160" y="354" width="240" height="50"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -259,14 +239,12 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" red="0.5" green="0.5317418981481481" blue="0.8013020833333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Bab-ZQ-jM6" firstAttribute="leading" secondItem="3Oz-zY-WbQ" secondAttribute="leading" id="rp2-qU-XxY"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.49803921568627452" green="0.49019607843137253" blue="0.80645254629629626" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Bau-Uq-EYB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Axj-bS-zB5"/>
@@ -293,7 +271,7 @@
                         <outlet property="dreamTitleBox" destination="rjW-EM-c0s" id="vjz-8p-Cah"/>
                         <outlet property="nightmareSwitch" destination="OKZ-uK-IZ1" id="ffv-3n-oiX"/>
                         <outlet property="repeatSwitch" destination="JJe-KJ-Ydu" id="5qJ-pD-OWH"/>
-                        <outlet property="saveButton" destination="hxk-Vf-fuG" id="dW5-D4-f7c"/>
+                        <outlet property="saveButton" destination="hxk-Vf-fuG" id="U8c-Be-AL3"/>
                         <outlet property="stackView" destination="Bau-Uq-EYB" id="Wxe-DI-csQ"/>
                     </connections>
                 </viewController>
@@ -305,7 +283,7 @@
         <!--Questions-->
         <scene sceneID="eiS-C4-ImH">
             <objects>
-                <viewController id="BeV-lh-LL2" customClass="QuestionViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BeV-lh-LL2" customClass="QuestionViewController" customModule="Drowzii" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="APA-h5-qtu"/>
                         <viewControllerLayoutGuide type="bottom" id="G6R-aH-2Cm"/>
@@ -318,15 +296,13 @@
                                 <rect key="frame" x="20" y="74" width="560" height="516"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What was the first thing you thought of when you recorded the dream?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUn-GB-jMv">
-                                        <rect key="frame" x="10" y="0.0" width="540" height="20"/>
-                                        <animations/>
+                                        <rect key="frame" x="10" y="0.0" width="540" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hDU-Jd-IdX">
-                                        <rect key="frame" x="160" y="30" width="240" height="100"/>
-                                        <animations/>
+                                        <rect key="frame" x="160" y="31" width="240" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="JPC-A4-wpr"/>
@@ -336,15 +312,13 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What was your feeling in the dream?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRo-9w-hAP">
-                                        <rect key="frame" x="142" y="140" width="278" height="21"/>
-                                        <animations/>
+                                        <rect key="frame" x="141" y="141" width="278" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dgo-xi-y3b">
-                                        <rect key="frame" x="160" y="171" width="240" height="100"/>
-                                        <animations/>
+                                        <rect key="frame" x="160" y="172" width="240" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="KI3-2u-J1a"/>
@@ -353,21 +327,18 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What was left unfinished at the end of the dream?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glf-G3-9kF">
-                                        <rect key="frame" x="0.0" y="281" width="560" height="21"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="282" width="560" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w4i-ec-OST">
-                                        <rect key="frame" x="160" y="311" width="240" height="205"/>
-                                        <animations/>
+                                        <rect key="frame" x="160" y="313" width="240" height="203"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="w4i-ec-OST" firstAttribute="leading" secondItem="dgo-xi-y3b" secondAttribute="leading" id="5io-cl-Hb7"/>
@@ -377,7 +348,6 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="j0u-Hx-7Dl" secondAttribute="trailing" id="CKl-tT-ron"/>
@@ -407,31 +377,27 @@
         <!--Choose Tags-->
         <scene sceneID="aa1-lv-OFj">
             <objects>
-                <tableViewController id="8CF-4T-lXK" customClass="TagTableViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8CF-4T-lXK" customClass="TagTableViewController" customModule="Drowzii" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="c7L-b2-in4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TagTableViewCell" rowHeight="90" id="xQI-PL-xld" customClass="TagTableViewCell" customModule="Dream_Diary" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TagTableViewCell" rowHeight="90" id="xQI-PL-xld" customClass="TagTableViewCell" customModule="Drowzii" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQI-PL-xld" id="SWB-LY-7yK">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHn-fN-jQ6">
                                             <rect key="frame" x="18" y="19" width="286" height="56"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <color key="backgroundColor" red="0.33838335530000002" green="0.33332888579999997" blue="0.55157959810000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="tagLabel" destination="SHn-fN-jQ6" id="WBk-Ld-Qyu"/>
@@ -464,7 +430,7 @@
         <!--Draw Dream-->
         <scene sceneID="sf3-16-LYr">
             <objects>
-                <viewController id="sGM-R5-Lmq" customClass="DrawingViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sGM-R5-Lmq" customClass="DrawingViewController" customModule="Drowzii" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H9C-WS-oaH"/>
                         <viewControllerLayoutGuide type="bottom" id="xPa-hW-8HP"/>
@@ -475,11 +441,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4aF-Iv-jdJ">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Wd-Vt-yOe">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TM1-AZ-NAo">
                                 <rect key="frame" x="20" y="550" width="50" height="50"/>
@@ -603,7 +567,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e10-Au-pFN" firstAttribute="leading" secondItem="WLX-I0-zLg" secondAttribute="trailing" id="2T6-jO-PgF"/>
@@ -663,31 +626,27 @@
         <!--Proper Nouns-->
         <scene sceneID="TcX-cq-Oaa">
             <objects>
-                <tableViewController id="Q2U-U6-1XV" customClass="ProperNounTableViewController" customModule="Dream_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Q2U-U6-1XV" customClass="ProperNounTableViewController" customModule="Drowzii" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="EoD-9z-8TF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProperNounTableViewCell" rowHeight="90" id="6rq-yT-IGQ" customClass="ProperNounTableViewCell" customModule="Dream_Diary" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProperNounTableViewCell" rowHeight="90" id="6rq-yT-IGQ" customClass="ProperNounTableViewCell" customModule="Drowzii" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6rq-yT-IGQ" id="J9c-5E-jBh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4l-wZ-RrJ">
                                             <rect key="frame" x="22" y="14" width="560" height="60"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <color key="backgroundColor" red="0.33838335530000002" green="0.33332888579999997" blue="0.55157959810000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="nounLabel" destination="o4l-wZ-RrJ" id="Kzc-Kz-6YI"/>
@@ -725,7 +684,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bg7-oL-9h7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -744,7 +702,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xms-3h-78W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -770,6 +727,6 @@
         <image name="Yellow" width="72" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ufh-dx-3P8"/>
+        <segue reference="bPg-Yg-OzR"/>
     </inferredMetricsTieBreakers>
 </document>

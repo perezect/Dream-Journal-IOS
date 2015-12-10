@@ -29,8 +29,58 @@ class DrawingViewController: UIViewController {
     var opacity: CGFloat = 1.0
     var swiped = false
     
+    let colors: [(CGFloat, CGFloat, CGFloat)] = [
+        (0, 0, 0),
+        (105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0),
+        (1.0, 0, 0),
+        (0, 0, 1.0),
+        (51.0 / 255.0, 204.0 / 255.0, 1.0),
+        (102.0 / 255.0, 204.0 / 255.0, 0),
+        (102.0 / 255.0, 1.0, 0),
+        (160.0 / 255.0, 82.0 / 255.0, 45.0 / 255.0),
+        (1.0, 102.0 / 255.0, 0),
+        (1.0, 1.0, 0),
+        (1.0, 1.0, 1.0),
+    ]
+    
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
+    @IBAction func colorBlack(sender: AnyObject) {
+        (red, green, blue) = (0, 0, 0)
+    }
+    
+    @IBAction func colorGray(sender: AnyObject) {
+        (red, green, blue) = (105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0)
+    }
+    @IBAction func colorRed(sender: AnyObject) {
+        (red, green, blue) = (1.0, 0, 0)
+    }
+    @IBAction func colorBlue(sender: AnyObject) {
+        (red, green, blue) = (0, 0, 1.0)
+    }
+    @IBAction func colorLightBlue(sender: AnyObject) {
+        (red, green, blue) = (51.0 / 255.0, 204.0 / 255.0, 1.0)
+    }
+    @IBAction func colorDarkGreen(sender: AnyObject) {
+        (red, green, blue) = (102.0 / 255.0, 204.0 / 255.0, 0)
+    }
+    @IBAction func colorLightGreen(sender: AnyObject) {
+        (red, green, blue) = (102.0 / 255.0, 1.0, 0)
+    }
+    @IBAction func colorBrown(sender: AnyObject) {
+        (red, green, blue) = (160.0 / 255.0, 82.0 / 255.0, 45.0 / 255.0)
+    }
+    @IBAction func colorDarkOrange(sender: AnyObject) {
+        (red, green, blue) = (1.0, 102.0 / 255.0, 0)
+    }
+    @IBAction func colorYellow(sender: AnyObject) {
+        (red, green, blue) = (1.0, 1.0, 0)
+    }
+    @IBAction func colorWhite(sender: AnyObject) {
+        (red, green, blue) = (1.0, 1.0, 1.0)
+    }
+    
+    
     
     //    @IBAction func saveImage(sender: AnyObject) {
     //

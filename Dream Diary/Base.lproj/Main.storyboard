@@ -102,6 +102,7 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKZ-uK-IZ1">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                                 <animations/>
+                                                <color key="onTintColor" red="0.94908807618351154" green="0.94571132541425784" blue="0.12035323331770106" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <action selector="nightmareToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="PZI-8N-RHf"/>
                                                 </connections>
@@ -110,24 +111,25 @@
                                                 <rect key="frame" x="99" y="0.0" width="81" height="31"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="0.98176147970730721" blue="0.40725250268144231" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <animations/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="e8G-lW-YhZ">
-                                        <rect key="frame" x="204" y="81" width="153" height="31"/>
+                                        <rect key="frame" x="190" y="81" width="180" height="31"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJe-KJ-Ydu">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                                 <animations/>
+                                                <color key="onTintColor" red="0.94908807618351154" green="0.94571132541425784" blue="0.12035323331770106" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5o-bK-KKp">
-                                                <rect key="frame" x="99" y="0.0" width="54" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5o-bK-KKp">
+                                                <rect key="frame" x="99" y="0.0" width="81" height="31"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -145,20 +147,36 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-Fd-wZU">
-                                        <rect key="frame" x="176" y="274" width="208" height="30"/>
+                                        <rect key="frame" x="160" y="274" width="240" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rir-iE-cbC">
-                                                <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
                                                 <animations/>
-                                                <state key="normal" title="Tags"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="0.28646827290076338" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="  Tags  ">
+                                                    <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="8CF-4T-lXK" kind="show" identifier="ShowTags" id="MRz-w3-icj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-Ke-J7O">
-                                                <rect key="frame" x="113" y="0.0" width="95" height="30"/>
+                                                <rect key="frame" x="129" y="0.0" width="111" height="30"/>
                                                 <animations/>
-                                                <state key="normal" title="Proper Nouns"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="0.28646827289999999" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="  Proper Nouns  ">
+                                                    <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="Q2U-U6-1XV" kind="show" identifier="ShowProperNouns" id="Yw1-BP-Cuu"/>
                                                 </connections>
@@ -167,20 +185,36 @@
                                         <animations/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bGH-pC-Uob">
-                                        <rect key="frame" x="151" y="314" width="259" height="30"/>
+                                        <rect key="frame" x="135" y="314" width="291" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHB-nd-IzC">
-                                                <rect key="frame" x="0.0" y="0.0" width="124" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
                                                 <animations/>
-                                                <state key="normal" title="Answer Questions"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="0.28646827289999999" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="  Answer Questions  ">
+                                                    <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="BeV-lh-LL2" kind="show" identifier="AnswerQuestions" id="2zL-My-pmP"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyh-Fn-3AS">
-                                                <rect key="frame" x="174" y="0.0" width="85" height="30"/>
+                                                <rect key="frame" x="190" y="0.0" width="101" height="30"/>
                                                 <animations/>
-                                                <state key="normal" title="Draw Dream"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="0.28646827289999999" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="  Draw Dream  ">
+                                                    <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="sGM-R5-Lmq" kind="show" identifier="DrawDream" id="vdl-qT-H9F"/>
                                                 </connections>
@@ -201,13 +235,14 @@
                                     </textView>
                                 </subviews>
                                 <animations/>
+                                <color key="backgroundColor" red="0.5" green="0.5317418981481481" blue="0.8013020833333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Bab-ZQ-jM6" firstAttribute="leading" secondItem="3Oz-zY-WbQ" secondAttribute="leading" id="rp2-qU-XxY"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.49803921568627452" green="0.49019607843137253" blue="0.80645254629629626" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Bau-Uq-EYB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Axj-bS-zB5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bau-Uq-EYB" secondAttribute="bottom" constant="112" id="C5w-iI-7nr"/>

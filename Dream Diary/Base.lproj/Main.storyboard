@@ -13,7 +13,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DreamTableViewCell" rowHeight="90" id="msY-6Z-Wa8" customClass="DreamTableViewCell" customModule="Dream_Diary" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
@@ -43,6 +45,7 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="0.49803921569999998" green="0.49019607840000001" blue="0.80645254629999996" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dreamDateLabel" destination="j1K-zi-kcp" id="IFi-vn-Gm6"/>
                                     <outlet property="dreamImageView" destination="w7v-SG-Clo" id="8gs-D8-GGA"/>
@@ -156,7 +159,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rir-iE-cbC">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.093006576021118545" green="0.065400420564873593" blue="0.73555871212121215" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="0.71999999999999997" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="  Tags  ">
                                                     <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -172,7 +175,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-Ke-J7O">
                                                 <rect key="frame" x="129" y="0.0" width="111" height="30"/>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="0.71999999999999997" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="  Proper Nouns  ">
                                                     <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -194,7 +197,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHB-nd-IzC">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="0.71999999999999997" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="  Answer Questions  ">
                                                     <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -210,7 +213,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyh-Fn-3AS">
                                                 <rect key="frame" x="190" y="0.0" width="101" height="30"/>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.093006576019999995" green="0.065400420560000005" blue="0.73555871210000001" alpha="0.71999999999999997" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="  Draw Dream  ">
                                                     <color key="titleColor" red="1" green="0.98176147970000005" blue="0.40725250270000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>

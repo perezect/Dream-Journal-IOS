@@ -12,6 +12,7 @@ class DreamTableViewCell: UITableViewCell {
     
     // MARK: Properties
 
+    @IBOutlet weak var dreamImageView: UIImageView!
     @IBOutlet weak var dreamTitleLabel: UILabel!
     @IBOutlet weak var dreamDateLabel: UILabel!
     

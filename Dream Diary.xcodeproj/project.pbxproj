@@ -232,7 +232,7 @@
 				TargetAttributes = {
 					FD13CDE91BAB2E0F0015D8C3 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = HT984Y29RZ;
+						DevelopmentTeam = M5K6KMMA2L;
 					};
 					FD13CDFD1BAB2E0F0015D8C3 = {
 						CreatedOnToolsVersion = 7.0;

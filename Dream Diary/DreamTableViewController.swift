@@ -85,6 +85,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
         // Filter dreams if you are searching
         if (self.resultSearchController.active){
             //cell.dreamTextLabel?.text = self.filteredDreams[indexPath.row].dreamText
+            cell.dreamImageView?.image = self.filteredDreams[indexPath.row].drawing
             cell.dreamTitleLabel?.text = self.filteredDreams[indexPath.row].dreamTitle
             cell.dreamDateLabel?.text = dateFormatter.stringFromDate(self.filteredDreams[indexPath.row].date)
         }
@@ -92,6 +93,7 @@ class DreamTableViewController: UITableViewController, UISearchResultsUpdating{
         // Otherwise just show all the dreams
         else{
             //cell.dreamTextLabel?.text = self.dreams[indexPath.row].dreamText
+            cell.dreamImageView?.image = self.dreams[indexPath.row].drawing
             cell.dreamTitleLabel?.text = self.dreams[indexPath.row].dreamTitle
             cell.dreamDateLabel?.text = dateFormatter.stringFromDate(self.dreams[indexPath.row].date)
         }
